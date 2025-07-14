@@ -29,5 +29,5 @@ body {
 }
 
 .min-h-minus-header { 
-  min-height: calc(100vh - 88px);
+  min-height: calc(100vh - var(--header-height, 88px));
 }

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import NextTopLoader from 'nextjs-toploader';
 import { Poppins, Poltawski_Nowy } from 'next/font/google';
+import QueryProvider from "@/providers/QueryProvider";
 
 const poltawski = Poltawski_Nowy({
   variable: "--font-poltawski",
@@ -41,7 +42,7 @@ export default async function Locallayout({ children, params }) {
           showSpinner={false}
         />
         <NextIntlClientProvider>
-          {children}
+          <QueryProvider>{children}</QueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>

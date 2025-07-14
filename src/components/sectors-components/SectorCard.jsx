@@ -1,6 +1,7 @@
 "use client"; 
 
 import Image from "next/image";
+import { Link as NextIntlLink } from "@/i18n/navigation";
 
 const SectorCard = ({ sector }) => {
   if (!sector) {
@@ -12,7 +13,7 @@ const SectorCard = ({ sector }) => {
       {/* Image Container */}
       <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
         <Image
-          src={sector?.imageUrl || "/assets/placeholder-sector.jpg"} 
+          src={sector?.image || "/assets/placeholder-sector.jpg"} 
           alt={sector?.title}
           fill 
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -26,11 +27,11 @@ const SectorCard = ({ sector }) => {
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
           {sector?.title}
         </h3>
-        <p className="text-gray-600 text-sm leading-relaxed">
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
           {sector?.description}
         </p>
         <div className="mt-4">
-          {/* <a
+          <NextIntlLink
             href={`/sectors/${sector._id}`}
             className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
           >
@@ -49,7 +50,7 @@ const SectorCard = ({ sector }) => {
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               ></path>
             </svg>
-          </a> */}
+          </NextIntlLink>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 "use client"
 import { useTranslations } from "next-intl";
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Search, Menu, X } from "lucide-react"
 
 import { usePathname } from "@/i18n/navigation";
@@ -19,6 +19,7 @@ const Navbar = () => {
     const [searchValue, setSearchValue] = useState("")
     const [debouncedValue, setDebouncedValue] = useState("")
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const navbarRef = useRef(null);
 
     const navLinks = [
         { name: t("home"), href: "/" },
@@ -57,8 +58,26 @@ const Navbar = () => {
         };
     }, [isMobileMenuOpen]);
 
+    useEffect(() => {
+        const updateHeaderHeight = () => {
+            if (navbarRef.current) {
+                document.documentElement.style.setProperty(
+                    '--header-height',
+                    `${navbarRef.current.offsetHeight}px`
+                );
+            }
+        };
+
+        updateHeaderHeight();
+        window.addEventListener('resize', updateHeaderHeight);
+
+        return () => {
+            window.removeEventListener('resize', updateHeaderHeight);
+        };
+    }, []);
+
     return (
-        <nav className="bg-white z-[1100] sticky top-0 shadow-lg">
+        <nav ref={navbarRef} className="bg-white z-[1100] sticky top-0 shadow-lg">
             {/* <PageLayout> */}
             <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-3">
                 <div className="flex items-center justify-between lg:w-[40rem] w-full">
