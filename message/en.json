@@ -1,0 +1,198 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "people": "People",
+    "sectors": "Sectors",
+    "insights": "Insights",
+    "about": "About",
+    "contact": "Contact",
+    "search": "Search...",
+    "english": "English",
+    "arabic": "عربي"
+  },
+  "Hero": {
+    "mainHeading": "YOUR TRUSTED LEGAL PARTNER TODAY AND ALWAYS",
+    "stats": {
+      "totalProBonoHours": "Total pro-bono hours",
+      "clients": "Clients",
+      "cases": "Cases"
+    }
+  },
+  "Latest News": {
+    "latestNews": "Latest News",
+    "services": "Services"
+  },
+  "Services": {
+    "title": "Services",
+    "description": "We offer practical, comprehensive, and cost-effective legal services.",
+    "contactUs": "Contact Us"
+  },
+  "Contact Us": {
+    "title": "Contact Us",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "phone": "Phone",
+    "phonePlaceholder": "Enter your phone number",
+    "message": "Message",
+    "messagePlaceholder": "Enter your message",
+    "sendMessage": "Send Message"
+  },
+  "Footer": {
+    "newsletterHeading": "Subscribe to our Newsletter",
+    "emailPlaceholder": "Your email",
+    "subscribeButton": "Subscribe",
+    "findUsOn": "Find Us On",
+    "information": "Information",
+    "aboutUs": "About Us",
+    "awards": "Awards",
+    "csr": "CSR",
+    "careers": "Careers",
+    "ourExpertise": "Our Expertise",
+    "people": "People",
+    "sectors": "Sectors",
+    "insights": "Insights",
+    "contactAndUpdate": "Contact & Update",
+    "latestNews": "Latest News",
+    "upcomingEvents": "Upcoming Events",
+    "newsletters": "Newsletters",
+    "contact": "Contact",
+    "legal": "Legal",
+    "termsAndConditions": "Terms & Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "fraudAlert": "Fraud Alert",
+    "disclaimer": "Disclaimer",
+    "copyright": "Copyright © 2025 Al-Ansari & Associates."
+  },
+  "SimpleHero": {
+    "home": "Home",
+    "pageTitleDefault": "Page Title",
+    "aboutUsTitle": "About Us",
+    "careersTitle": "Careers",
+    "contactTitle": "Contact Us",
+    "sectorsTitle": "Sectors",
+    "peopleTitle": "People",
+    "insightsTitle": "Insights",
+    "awardsTitle": "Awards",
+    "csrTitle": "CSR",
+    "updatesTitle": "Updates",
+    "detailsTitle": "Details",
+    "peopleDetailsTitle": "People Details",
+    "eventsTitle": "Events",
+    "newslettersTitle": "Newsletters",
+    "termsAndConditionsTitle": "Terms & Conditions",
+    "privacyPolicyTitle": "Privacy Policy",
+    "fraudAlertTitle": "Fraud Alert",
+    "disclaimerTitle": "Disclaimer"
+  },
+  "InsightsHeader": {
+    "viewAll": "View All"
+  },
+  "UpdatesPage": {
+    "showingResults": "Showing 1 - {totalResults} of {totalResults} results",
+    "noUpdatesAvailable": "No updates available",
+    "updateNotFound": "Update not found!",
+    "error": "An error occurred.",
+    "detailsTitle": "Details"
+  },
+  
+  "EventsPage": {
+    "showingResults": "Showing 1 - {totalResults} of {totalResults} results",
+    "eventNotFound": "Event not found!"
+  },
+  "NewslettersPage": {
+    "showingResults": "Showing 1 - {totalResults} of {totalResults} results",
+    "newsletterNotFound": "Newsletter not found!"
+  },
+  "PeoplePage": {
+    "pageTitle": "Our People",
+    "partnersSectionTitle": "Partners",
+    "teamSectionTitle": "Our Team"
+  },
+  "SectorsPage": {
+    "heroTitle": "Sectors",
+    "mainHeadingPart1": "Al-Ansari & Associates",
+    "mainHeadingPart2": " offers legal services across various sectors. Discover why we're the right strategic partner for your business in Qatar.",
+    "noSectorsAvailable": "No sectors available"
+  },
+  "InsightsPage": {
+    "heroTitle": "Insights",
+    "updatesSectionTitle": "Updates",
+    "eventsSectionTitle": "Events",
+    "newslettersSectionTitle": "Newsletters"
+  },
+  "AboutPage": {
+    "aboutUsTitle": "About Us",
+    "headerTitle": "Our Values",
+    "headerDescription": "Stay informed with our latest legal services, industry updates, and notable firm events.",
+    "awardsTitle": "Awards",
+    "csrTitle": "CSR",
+    "legalPracticeTitle": "Legal Practice",
+    "legalPracticeDescription": "Our practice is underpinned by a deep understanding of local laws and of the sectors in which our clients operate. We provide expert counsel and innovative solutions to complex issues.",
+    "clientFocusTitle": "Client Focus",
+    "clientFocusDescription": "We pride ourselves on providing efficient, responsive and courteous service. We add value for our clients by providing training and information to support their business in the region.",
+    "highestLevelTitle": "Highest Level",
+    "highestLevelDescription": "We are proud to offer legal services and expertise with international standards. Our core strength is the diversity and experience of our legal professionals with commitment to the highest standards."
+  },
+  "CsrDetailsPage": {
+    "notFound": "CSR not found!",
+    "detailsPageTitle": "Details"
+  },
+  "ContactPage": {
+    "heroTitle": "Contact Us"
+  },
+  "ContactInfoPage": {
+    "contactInfoTitle": "Contact Info",
+    "contactInfoDescription": "Get in touch with our team for legal support, inquiries, or consultation appointments.",
+    "locationHeading": "Location:",
+    "emailHeading": "Email:",
+    "phoneHeading": "Phone:",
+    "officeHoursHeading": "Office Hours:",
+    "loadingMap": "Loading map..."
+  },
+  "TermsPage": {
+    "introHeading": "Introduction",
+    "introPara1": "These terms and conditions, as well as any other additional terms, conditions, notices and disclaimers displayed elsewhere on this Website [www.alansarilaw.com] (Terms) apply to your use of this Website. Please read these Terms carefully before accessing or using the information and services available through this Website. These Terms may be modified from time to time without notice to you and you should therefore regularly review these Terms for any such modifications.",
+    "introPara2": "Your access and/or use of this Website constitutes your continued acceptance of all terms, conditions, and notices that are effective as of the date and time you use or access the Website. These Terms will constitute a legal agreement between “you” (the user of this Website) and “us” (Al-Ansari & Associates, hereinafter A&A).",
+    "useOfWebsiteHeading": "Use of Website",
+    "useOfWebsitePara": "This Website is owned by A&A. The material on this Website has been produced by A&A and has been prepared as general information about A&A and its’ services. It is not intended to provide legal advice and, as such, the content does not constitute legal advice, and you should not act on the information provided on this Website without seeking proper legal advice. Use of this Website does not create any solicitor-client relationship between you and A&A.",
+    "confidentialInfoHeading": "Confidential Information",
+    "confidentialInfoPara": "Communications via this Website do not establish a lawyer-client relationship and any information sent to A&A before establishing a lawyer-client relationship as evidenced by signed terms of engagement can and will be used for the benefit of the firm’s existing clients; accordingly, until we have formally established a lawyer-client relationship, do NOT send any confidential information or any information you would expect to be maintained in confidence through this Website or through any email address posted on this Website.",
+    "copyrightHeading": "Copyright",
+    "copyrightPara": "Unless otherwise expressly indicated, copyright of the contents of this Website (Website Content) is owned by or is licensed to A&A. The Website Content may not be copied, reproduced, republished, uploaded, posted, transmitted or distributed in whole or part for any purpose other than individual viewing of this Website without the express prior permission of A&A.",
+    "privacyHeading": "Privacy",
+    "privacyPara1": "A&A may collect personal information from you when if you use e-mail links via the Website to communicate with Al-Ansari & Associates, access password-protected areas or otherwise provide us with personally identifiable information.",
+    "privacyPara2": "In addition to the personal information A&A may collect through this Website, A&A collects other non-personal information. For each visitor to this Website, the Website’s server will automatically recognize and store your Internet Protocol address, but not any personally identifiable information about you. In addition, this Website uses cookies. Most web browsers are set by default to accept cookies, however you may set your browser to either prompt or refuse cookies. Please note that rejecting cookies will restrict the functionality of this Website as a whole. A&A uses the non-personal information collected for tracking the statistics of this Website, which allows us to better understand our users and improve the layout and functionality of this Website.",
+    "privacyPara3": "A&A will not share your personal information with any third party without your prior consent. A&A is not responsible for the actions of any third party to which it provides your personal information with your prior consent.",
+    "thirdPartyLinksHeading": "Third Party Links",
+    "thirdPartyLinksPara": "This Website may contain links to third party sites. A&A does not recommend or endorse the content or privacy practices of any third party sites which may be linked to or from this Website, or products or services of any third party organisations mentioned or described on this Website or linked to or from this Website. You acknowledge that you enter any third party sites at your own risk.",
+    "limitationOfLiabilityHeading": "Limitation of Liability",
+    "limitationOfLiabilityPara": "To the extent permitted by the law, A&A will not be liable for any direct, indirect, punitive, incidental, special, or consequential damages or loss (including, without limitation, incidental and consequential damages, lost profits, or damages resulting from lost data or business interruption) arising out of, or in way connected with, the use or inability to use the Website and the Website Content.",
+    "jurisdictionHeading": "Jurisdiction",
+    "jurisdictionPara1": "Your use of this Website and any dispute arising out of such use of this Website is subject to the laws of the State of Qatar.",
+    "jurisdictionPara2": "Legal content is based on laws applicable in the countries in which A&A practices. A&A does not represent that it is authorised to provide legal advice in all the jurisdictions from which this website can be viewed.",
+    "thankYouPara1": "Thank you for your cooperation. We hope you find the Website helpful and convenient to use. If you have questions or comments regarding this website please Contact Us.",
+    "thankYouPara2": "If there are any technical problems with this Website, go to Contact Us."
+  },
+  "PrivacyPage": {
+    "introHeading": "Introduction",
+    "introPara1": "Al-Ansari & Associates is committed to maintaining the privacy of our web site visitors. You are not required to reveal any personal information, such as your name, address, or telephone number, in order to visit our web site.",
+    "introPara2": "It’s important to us that you understand the safeguards we have in place to make sure your privacy is protected when you visit our Web site and when you register online for our seminars or other events. The following information explains our Privacy Policy and describes how and to what extent we collect information when you visit this Web site.",
+    "restrictionsHeading": "Restrictions on Use of Materials",
+    "restrictionsPara": "All materials contained on this Site, and all intellectual property rights thereto, including copyrights, trademarks, service marks, trade names and trade dress, are owned by Al-Ansari & Associates or its affiliates. You agree not to copy, reproduce, republish, transmit, modify or distribute any of the materials contained on the Site, except for your personal, noncommercial use, absent the prior written approval of Al-Ansari & Associates.",
+    "choiceOfLawHeading": "Choice of Law and Jurisdiction",
+    "choiceOfLawPara": "Any legal action arising between you and Al-Ansari & Associates in relation to your use of the web site shall be governed by the laws of the State of Qatar and the Qatari courts shall have the exclusive jurisdiction."
+  },
+  "FraudAlertPage": {
+    "mainHeading": "Illegal use of your name and Fraudulent Emails",
+    "para1": "Please note that there are a number of scams operating whereby our name and those of our lawyers are being misused.",
+    "para2": "Al-Ansari & Associates has learned of fraudulent emails referencing the firm and the firm’s lawyers are being distributed with documents attached that are purported to be created by our firm. The emails are inviting recipients to engage in fictitious investment schemes for purposes of defrauding the recipient. Al-Ansari & Associates has no involvement with these emails or any attached documentation.",
+    "para3": "We strongly urge members of the public to act cautiously for their own protection. Please do not reply or proceed with any such emails without first checking with our firm as to whether the emails are genuinely related to Al-Ansari & Associates.",
+    "para4": "Please note also that our email addresses always end with @alansarilaw.com and we would never send emails from generic email accounts, such as Yahoo, Gmail, Hotmail, etc.",
+    "para5": "For further information relating to this, please Contact Us."
+  },
+  "DisclaimerPage": {
+    "para1": "We prepared the materials and links on this web site for informational purposes. The transmission and display of the information contained at, or accessed through, this web site is not intended to create, and receipt or viewing of it does not constitute, an attorney-client relationship. Since we are not providing legal advice through this web site, you should not act upon any information you might receive from it without seeking professional counsel.",
+    "para2": "As you no doubt appreciate, hiring a lawyer is an important decision. We would welcome the opportunity to consider having Al-Ansari & Associates to become your lawyer. If you are interested in possibly retaining us, we would be delighted to send you additional information about our qualifications, experience, and standard terms of engagement. Please do not send us any confidential information without first speaking with one of our partners and receiving explicit authorization to send us the information.",
+    "para3": "The materials on this web site are intended, but not guaranteed, to reflect current legal developments and the current state of the law. We do not, however, represent, warrant, or guarantee they will be complete, accurate, or up to date when you view them. Al-Ansari& Associates is not responsible for any third-party content that may be accessed through this web site. Any reference to third-party information, products, or services linked to this web site does not constitute an expressed or implied endorsement by Al-Ansari & Associates."
+  }
+}

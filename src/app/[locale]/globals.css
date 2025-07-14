@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+
+
+
+
+@theme {
+  --color-bg-primary: #F7F3E8;
+  --color-btn-bg: #AF8B18;
+  --color-text-title: #333333;
+  --color-text-light: #F7F7F7;
+  --color-text-muted: #5C5C5C;
+} 
+
+body {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-poltawski {
+  font-family: var(--font-poltawski), serif;
+}
+
+.scrl-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrl-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.min-h-minus-header { 
+  min-height: calc(100vh - 88px);
+}
