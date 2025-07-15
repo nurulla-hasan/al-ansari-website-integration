@@ -1,8 +1,9 @@
 
+import config from "@/config/config";
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://10.0.60.118:5006"
+  baseURL: config.BASE_URL
 });
 
 api.interceptors.response.use(

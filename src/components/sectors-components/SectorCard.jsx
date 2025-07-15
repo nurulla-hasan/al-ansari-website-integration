@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Link as NextIntlLink } from "@/i18n/navigation";
+import config from "@/config/config";
 
 const SectorCard = ({ sector }) => {
   if (!sector) {
@@ -13,7 +14,7 @@ const SectorCard = ({ sector }) => {
       {/* Image Container */}
       <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden">
         <Image
-          src={sector?.image ? `http://10.0.60.118:5006${sector?.image}`: "/assets/placeholder-image.jpg"} 
+          src={sector?.image ? `${config.BASE_URL}${sector?.image}`: "/assets/placeholder-image.jpg"} 
           alt={sector?.title}
           fill 
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
