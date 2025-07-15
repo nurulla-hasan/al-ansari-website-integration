@@ -1,5 +1,7 @@
 "use client";
 
+import config from "@/config/config";
+import { formatDate } from "@/utils/dateFormatter";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,23 +15,23 @@ const InsightsCard = ({ data, pathname }) => {
             {/* Image Container */}
             <div className="relative w-[100%] h-56 sm:w-64 sm:h-64 md:w-48 md:h-48 lg:w-56 lg:h-56 overflow-hidden rounded-xl flex-shrink-0">
                 <Image
-                    src={data?.imageUrl || "/assets/placeholder-insights.jpg"}
+                    src={data?.image ? `${config.BASE_URL}${data?.image}` : "/assets/placeholder-insights.jpg"}
                     alt={data?.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover"
-                    priority={false}
+                    priority={false} 
                 />
             </div>
 
             {/* Content Area */}
             <div className="md:p-4 flex flex-col justify-between flex-grow">
-                <p className="text-sm text-text-muted mb-2">{data?.date}</p>
+                <p className="text-sm text-text-muted mb-2">{formatDate(data?.createdAt)}</p>
                 <h3 className="text-xl font-semibold text-text-title mb-3 leading-tight">
                     {data?.title}
                 </h3>
                 <p className="text-text-muted text-base leading-relaxed line-clamp-2 mb-4">
-                    {data?.summary}
+                    {data?.description}
                 </p>
 
                 <div className="mt-auto">
