@@ -2,10 +2,10 @@
 
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { fetcher } from "@/utils/api";
+import { api } from "@/utils/api";
 import PageLayout from "@/components/layout/PageLayout";
 import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
-import CardSkeletonLoader from "@/components/shared/CardSkeletonLoader";
+import DetailsSkeletonLoader from "@/components/shared/DetailsSkeletonLoader";
 import ErrorDisplay from "@/components/shared/ErrorDisplay";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -17,11 +17,11 @@ const SectorDetailsPage = () => {
 
   const { data: responseData, isLoading, isError } = useQuery({
     queryKey: ["sector", id],
-    queryFn: () => fetcher(`/dashboard/sector/${id}`),
+    queryFn: () => api.get(`/dashboard/sector/${id}`),
     enabled: !!id, // Only fetch if id is available
   });
 
-  const sector = responseData?.data;
+  const sector = responseData?.data?.data;
 
   const breadcrumbs = [
     { name: tNavbar('home'), href: "/" },
@@ -31,36 +31,37 @@ const SectorDetailsPage = () => {
 
   return (
     <div className="min-h-minus-header">
-      <SimpleHero title={sector.title} breadcrumbs={breadcrumbs} />
+      <SimpleHero title={sector?.title} breadcrumbs={breadcrumbs} />
 
       <PageLayout>
-        {isLoading && <CardSkeletonLoader count={3} />}
-        {isError && <ErrorDisplay message="Failed to load sector details." />}
-        {!isLoading && !isError && (
-          <div className="flex flex-col lg:flex-row gap-8">
-            <div className="lg:w-1/2">
-              <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full overflow-hidden rounded-md">
+        {isLoading && <DetailsSkeletonLoader />}
+        {!isLoading && isError && <ErrorDisplay message="Failed to load sector details." />}
+        {!isLoading && !isError && sector ? (
+          <>
+            <div className="w-full mb-8">
+              <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-md">
                 <Image
-                  src={sector.image || "/assets/placeholder-sector.jpg"}
-                  alt={sector.title}
+                  src={sector?.image ? `http://10.0.60.118:5006${sector?.image}`: "/assets/placeholder-image.jpg"}
+                  alt={sector?.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                  sizes="100vw"
                   className="object-cover"
                   priority={true}
                 />
               </div>
             </div>
-            <div className="lg:w-1/2">
-              <h1 className="text-3xl font-bold text-gray-900 mb-4">
-                {sector.title}
+            <div className="w-full">
+              <h1 className="text-2xl md:text-3xl font-bold text-text-title mb-4">
+                {sector?.title}
               </h1>
-              <p className="text-gray-700 leading-relaxed">
-                {sector.description}
+              <p className="text-text-muted leading-relaxed">
+                {sector?.description}
               </p>
             </div>
-          </div>
+          </>
+        ) : (
+          !isLoading && !isError && !sector && <ErrorDisplay message="Sector not found." />
         )}
-        {!sector && <ErrorDisplay message="Failed to load sector details." />}
       </PageLayout>
     </div>
   );

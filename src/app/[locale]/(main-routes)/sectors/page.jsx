@@ -5,7 +5,7 @@ import SectorCard from '@/components/sectors-components/SectorCard';
 import SimpleHero from '@/components/shared/simple-hero/SimpleHero';
 import { useTranslations } from 'next-intl';
 import { useQuery } from '@tanstack/react-query';
-import { fetcher } from '@/utils/api';
+import { api } from '@/utils/api';
 import CardSkeletonLoader from '@/components/shared/CardSkeletonLoader';
 import ErrorDisplay from '@/components/shared/ErrorDisplay';
 
@@ -16,15 +16,15 @@ const Sectors = () => {
 
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },
-        { name: tSimpleHero('sectorsTitle'), href: "/sectors" }
+        { name: tSimpleHero('sectorsTitle'), href: "/sectors" } 
     ];
 
     const { data: responseData, isLoading, isError } = useQuery({
         queryKey: ['sectors'],
-        queryFn: () => fetcher('/dashboard/sector'),
+        queryFn: () => api.get('/dashboard/sector'),
     });
 
-    const sectors = responseData?.data;
+    const sectors = responseData?.data?.data;
 
     return (
         <div className='min-h-minus-header'>
@@ -35,8 +35,8 @@ const Sectors = () => {
 
             <PageLayout>
                 {isLoading && <CardSkeletonLoader count={3} />}
-                {isError && <ErrorDisplay message="Failed to load sectors." />}
-                {!isLoading && !isError && (
+                {!isLoading && isError && <ErrorDisplay message="Failed to load sectors." />}
+                {!isLoading && !isError && sectors && sectors.length > 0 ? (
                     <div>
                         <h3 className='text-text-muted'>
                             <span className='text-text-title font-semibold'>
@@ -48,16 +48,14 @@ const Sectors = () => {
 
                         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6'>
                             {
-                                sectors && sectors.length > 0 ? (
-                                    sectors.map((sector) => (
-                                        <SectorCard key={sector._id} sector={sector} />
-                                    ))
-                                ) : (
-                                    <p>{tSectors('noSectorsAvailable')}</p>
-                                )
+                                sectors.map((sector) => (
+                                    <SectorCard key={sector._id} sector={sector} />
+                                ))
                             }
                         </div>
                     </div>
+                ) : (
+                    !isLoading && !isError && <p>{tSectors('noSectorsAvailable')}</p>
                 )}
             </PageLayout>
         </div>
