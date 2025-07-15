@@ -1,64 +1,69 @@
-"use client";
-
-import Image from "next/image";
-import { eventsData } from "@/data/data";
-import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
+"use client"
 import PageLayout from "@/components/layout/PageLayout";
-import { useTranslations } from "next-intl"; 
-import React from "react";
+import DetailsSkeletonLoader from "@/components/shared/DetailsSkeletonLoader";
+import ErrorDisplay from "@/components/shared/ErrorDisplay";
+import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
+import config from "@/config/config";
+import { api } from "@/utils/api";
+import { formatDate } from "@/utils/dateFormatter";
+import { useQuery } from "@tanstack/react-query";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { useParams } from 'next/navigation';
 
-export const EventDetails = ({ params }) => {
-    const tEventsPage = useTranslations('EventsPage'); 
-    const tNavbar = useTranslations('Navbar'); 
-    const tSimpleHero = useTranslations('SimpleHero'); 
-
-    const { id } = React.use(params); 
-
-    const item = eventsData.find((item) => item._id === id);
-
-    if (!item) {
-        return (
-            <div className="min-h-minus-header flex items-center justify-center">
-                <p className="text-lg text-red-500">{tEventsPage('eventNotFound')}</p>
-            </div>
-        );
-    }
+const EventDetailsPage = () => {
+    const { id } = useParams();
+    const t = useTranslations('InsightsPage');
+    const tNavbar = useTranslations('Navbar');
+    const tSimpleHero = useTranslations('SimpleHero');
 
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },
-        { name: tSimpleHero('insightsTitle'), href: "/insights" }, 
-        { name: tSimpleHero('eventsTitle'), href: "/insights/events" },
-        { name: tSimpleHero('detailsTitle'), href: `/insights/events/${item._id}` } 
+        { name: tSimpleHero('insightsTitle'), href: "/insights" },
+        { name: t('eventsSectionTitle'), href: "/insights/events" },
+        { name: "Event Details", href: `/insights/events/${id}` }
     ];
 
+    const { data: eventResponse, isLoading, isError } = useQuery({
+        queryKey: ['event', id],
+        queryFn: () => api.get(`/dashboard/events/${id}`),
+        enabled: !!id,
+    });
+
+    const event = eventResponse?.data?.data;
+
     return (
-        <div>
+        <div className="min-h-minus-header">
             <SimpleHero
-                title={tSimpleHero('detailsTitle')} 
+                title={event?.title || "Event Details"}
                 breadcrumbs={breadcrumbs}
             />
             <PageLayout>
-                <p className="text-lg md:text-2xl text-text-muted mb-2 md:mb-4">{item.date}</p>
-                <h1 className="font-poltawski text-2xl md:text-5xl font-bold mb-8 md:mb-12 text-text-title">
-                    {item.title}
-                </h1>
-
-                <div className="relative w-full aspect-[16/5] rounded-xl overflow-hidden mb-8">
-                    <Image
-                        src={item.imageUrl}
-                        alt={item.title}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                </div>
-
-                <p className="md:text-xl text-sm px-2 text-gray-700 leading-relaxed">
-                    {item.summary}
-                </p>
+                {isLoading && <DetailsSkeletonLoader />}
+                {!isLoading && isError && <ErrorDisplay message="Failed to load event details." />}
+                {!isLoading && !isError && event && (
+                    <>
+                        <div className="mb-8 space-y-2">
+                            <p className="text-gray-500">{formatDate(event?.createdAt)}</p>
+                            <h1 className="text-3xl font-bold">{event?.title}</h1>
+                        </div>
+                        <div className="flex flex-col gap-8">
+                            <div className="relative w-full h-96">
+                                <Image
+                                    src={event?.image ? `${config.BASE_URL}${event?.image}` : "/assets/placeholder-insights.jpg"}
+                                    alt={event?.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    className="object-cover rounded-lg"
+                                />
+                            </div>
+                            <div dangerouslySetInnerHTML={{ __html: event?.description }} />
+                        </div>
+                    </>
+                )}
             </PageLayout>
         </div>
     );
 };
 
-export default EventDetails;
+export default EventDetailsPage;

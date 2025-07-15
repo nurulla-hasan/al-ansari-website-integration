@@ -61,7 +61,6 @@ export const servicesItems = [
 
 
 
-
 // About Data
 export const aboutData = [
   {
@@ -196,6 +195,19 @@ export const contactData =
 
 
 
-const apiResponse = {
-
+const apiResponseUpdatesData = {
+  "statusCode": 200,
+  "success": true,
+  "message": "Updates retrieved successfully.",
+  "data": [
+    {
+      "_id": "68749697e1fd89144477bf66",
+      "title": "Sports & Entertainment Updates",
+      "description": "Qatar's sports and entertainment sectors are set for significant growth as part of economic diversification. We support organizations through key milestones, including incorporation, asset transactions, employment matters, sponsorships, contracts, and dispute resolution.",
+      "image": "/images/image/1752471292437-istockphoto-1415886888-612x612.jpg",
+      "createdAt": "2025-07-14T05:33:11.051Z",
+      "updatedAt": "2025-07-14T05:34:52.441Z",
+      "__v": 0
+    }
+  ]
 }
