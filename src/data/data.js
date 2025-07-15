@@ -246,10 +246,7 @@ export const teamMembersData = [
       "2019 - 2021: Legal Advisor, Financial Institution"
     ],
     barAdmission: [],
-    awards: [],
-    socialMedia: [
-      { platform: "linkedin", url: "https://linkedin.com/in/ahmed-menazaa-profile-link" }
-    ]
+    awards: []
   },
 
   {
@@ -283,81 +280,6 @@ export const teamMembersData = [
   }
 ];
 
-// Sectors Data 
-export const sectorsData = [
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0b1",
-    "title": "Sports & Entertainment",
-    "description": "Qatar's sports and entertainment sectors are set for significant growth as part of economic diversification. We support organizations through key milestones, including incorporation, asset transactions, employment matters, sponsorships, contracts, and dispute resolution.",
-    "imageUrl": "/assets/sports_entertainment.jpg"
-  },
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0b2",
-    "title": "Telecoms, Media & Technology",
-    "description": "We provide comprehensive TMT support, combining local legal expertise, regional reach, and bilingual capability to meet the evolving needs of companies in the digital and broadband sector.",
-    "imageUrl": "/assets/telecoms_media_technology.jpg"
-  },
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0b3",
-    "title": "Transport & Logistics",
-    "description": "Our senior attorneys have prior ties to the Qatar Government and judiciary, making them well placed to counsel and support clients with the regulatory requirements and complex dispute matters which may arise in these two vital sectors.",
-    "imageUrl": "/assets/transport_logistics.jpg"
-  },
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0b4",
-    "title": "Employment",
-    "description": "From structuring compensation and incentive packages to settling employment disputes, we provide practical, cost-effective advice for navigating Qatar's employment environment.",
-    "imageUrl": "/assets/employment.jpg"
-  },
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0b5",
-    "title": "Energy & Natural Resources",
-    "description": "With experience that spans virtually every sector of the industry, we truly understand the energy and natural resources market in Qatar. We can help you make sense of the complex regulations governing the industry, advise you on corporate issues, and assist with transactions as your business grows.",
-    "imageUrl": "/assets/energy_natural_resources.jpg"
-  },
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0b6",
-    "title": "Healthcare",
-    "description": "We provide counsel on local healthcare business transactions, corporate governance and regulatory compliance.",
-    "imageUrl": "/assets/healthcare.jpg"
-  },
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0b7",
-    "title": "Banking & Insurance",
-    "description": "International and domestic lenders trust Al-Ansari & Associates in complex financing transactions. With global partners across Europe, Asia, and North America, we offer the expertise and reach needed. We handle banking, finance, and insurance matters efficiently within Qatar.",
-    "imageUrl": "/assets/banking_insurance.jpg"
-  },
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0b8",
-    "title": "Construction & Infrastructure",
-    "description": "Al-Ansari & Associates advises international and domestic lenders on complex financing transactions. With global partnerships, we offer the expertise and reach to support banking, finance, and insurance matters in Qatar.",
-    "imageUrl": "/assets/construction_infrastructure.jpg"
-  },
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0b9",
-    "title": "Education",
-    "description": "We have advised and provided counsel to major educational institutions in Qatar on a wide range of issues including restructuring, licensing, regulatory & compliance matters and contentious employment matters.",
-    "imageUrl": "/assets/education.jpg"
-  },
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0c0",
-    "title": "Hospitality & Leisure",
-    "description": "Our hospitality & leisure practice is growing, with both local & international hospitality clients seeking our advice and representation. We can help you make sense of the regulatory framework governing the sector, advise you on corporate issues, and assist with transactions and challenges.",
-    "imageUrl": "/assets/hospitality_leisure.jpg"
-  },
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0c1",
-    "title": "Intellectual Property & Copyright",
-    "description": "Clients rely on us to protect their intellectual property, including copyrights, trademarks, and patents. We assist with registration, licensing, and enforcement to safeguard your rights and brand.",
-    "imageUrl": "/assets/intellectual_property.jpg"
-  },
-  {
-    "_id": "667cc467a3d2b2e8f1c9d0c2",
-    "title": "Real Estate & Property",
-    "description": "We understand the opportunities, strategic drivers and challenges in the regional real estate and property market. We help our clients to structure comprehensive, cost-effective deals for all of their construction and real estate projects.",
-    "imageUrl": "/assets/real_estate.jpg"
-  }
-]
 
 
 // Updates Data
@@ -673,3 +595,75 @@ export const contactData =
 }
 
 
+
+const apiResponse = {
+  "statusCode": 200,
+  "success": true,
+  "message": "All people retrieved successfully.",
+  "data": [
+    {
+      "_id": "6875f80c469e3ad9a8edce34",
+      "fullName": "Mohammed Al-Ansari",
+      "position": "Managing Partner",
+      "email": "malansari@alansarilaw.com",
+      "phoneNumber": "+974 4491 3355",
+      "bio": "Mohammed Al-Ansari is the founder and Managing Partner of Al-Ansari & Associates represents clients in various disputes before the Qatar Courts and Arbitration Tribunals.",
+      "professional": [
+        "Before joining the firm, Mr. Al-Ansari worked at the Qatar Ministry of Justice...",
+        "In addition, Mr. Al-Ansari worked at the Ministry of Justice Contracts and Legal Opinions Department..."
+      ],
+      "education": "LL.B., Faculty of Law - Al-Neelain University",
+      "barAdmission": "Qatar",
+      "awards": [
+        "Leading Corporate Lawyer, Legal 500 (2020–2024)",
+        "Arbitrator of the Year, Qatar Bar Association (2023)"
+      ],
+      "practice": [
+        "Corporate Law",
+        "International Arbitration",
+        "Mergers & Acquisitions",
+        "Commercial Litigation"
+      ],
+      "industry": [
+        "Corporate and Commercial",
+        "Litigation & Dispute Resolution",
+        "Energy & Natural Resources",
+        "Legislative Drafting",
+        "Legal Services"
+      ],
+      "category": "partners",
+      "profile_image": "/images/profile/1752570579454-ansari.png",
+      "createdAt": "2025-07-15T06:41:16.553Z",
+      "updatedAt": "2025-07-15T09:09:39.547Z",
+      "__v": 0
+    },
+    {
+      "professional": [],
+      "_id": "6875f918469e3ad9a8edce43",
+      "fullName": "Hossam Farouk",
+      "position": "Partner",
+      "email": "hfarouk@alansarilaw.com",
+      "phoneNumber": "+974 4432 1098",
+      "bio": "Hossam Farouk is a seasoned Partner at Al-Ansari Law, specializing in real estate, construction, and property development law. His profound understanding of local regulations and practical approach to complex transactions make him a trusted advisor for major projects. Hossam excels in facilitating smooth project execution and resolving intricate property disputes.",
+      "education": "LL.B., Faculty of Law - Al-Neelain University",
+      "barAdmission": "Qatar",
+      "awards": [
+        "2010 - Present: Partner, Al-Ansari Law",
+        "2003 - 2010: Legal Counsel, Major Real Estate Developer"
+      ],
+      "practice": [],
+      "industry": [
+        "Corporate and Commercial",
+        "Litigation & Dispute Resolution",
+        "Energy & Natural Resources",
+        "Legislative Drafting",
+        "Legal Services"
+      ],
+      "category": "partners",
+      "profile_image": "/images/profile/1752561943982-hossam.png",
+      "createdAt": "2025-07-15T06:45:44.133Z",
+      "updatedAt": "2025-07-15T06:45:44.133Z",
+      "__v": 0
+    }
+  ]
+}
