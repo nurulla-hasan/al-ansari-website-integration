@@ -29,66 +29,38 @@ const SectorDetailsPage = () => {
     { name: sector?.title || "Details", href: `/sectors/${id}` },
   ];
 
-  if (isLoading) {
-    return (
-      <div className="min-h-minus-header">
-        <SimpleHero title="Loading..." breadcrumbs={breadcrumbs} />
-        <PageLayout>
-          <CardSkeletonLoader count={1} />
-        </PageLayout>
-      </div>
-    );
-  }
-
-  if (isError) {
-    return (
-      <div className="min-h-minus-header">
-        <SimpleHero title="Error" breadcrumbs={breadcrumbs} />
-        <PageLayout>
-          <ErrorDisplay message="Failed to load sector details." />
-        </PageLayout>
-      </div>
-    );
-  }
-
-  if (!sector) {
-    return (
-      <div className="min-h-minus-header">
-        <SimpleHero title="Not Found" breadcrumbs={breadcrumbs} />
-        <PageLayout>
-          <ErrorDisplay message="Sector not found." />
-        </PageLayout>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-minus-header">
       <SimpleHero title={sector.title} breadcrumbs={breadcrumbs} />
 
       <PageLayout>
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="lg:w-1/2">
-            <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full overflow-hidden rounded-md">
-              <Image
-                src={sector.image || "/assets/placeholder-sector.jpg"}
-                alt={sector.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-                className="object-cover"
-                priority={true}
-              />
+        {isLoading && <CardSkeletonLoader count={3} />}
+        {isError && <ErrorDisplay message="Failed to load sector details." />}
+        {!isLoading && !isError && (
+          <div className="flex flex-col lg:flex-row gap-8">
+            <div className="lg:w-1/2">
+              <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-full overflow-hidden rounded-md">
+                <Image
+                  src={sector.image || "/assets/placeholder-sector.jpg"}
+                  alt={sector.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                  className="object-cover"
+                  priority={true}
+                />
+              </div>
+            </div>
+            <div className="lg:w-1/2">
+              <h1 className="text-3xl font-bold text-gray-900 mb-4">
+                {sector.title}
+              </h1>
+              <p className="text-gray-700 leading-relaxed">
+                {sector.description}
+              </p>
             </div>
           </div>
-          <div className="lg:w-1/2">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
-              {sector.title}
-            </h1>
-            <p className="text-gray-700 leading-relaxed">
-              {sector.description}
-            </p>
-          </div>
-        </div>
+        )}
+        {!sector && <ErrorDisplay message="Failed to load sector details." />}
       </PageLayout>
     </div>
   );

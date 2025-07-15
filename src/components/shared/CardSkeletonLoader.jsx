@@ -6,8 +6,7 @@ const CardSkeletonLoader = ({ count = 1 }) => {
           <div className="w-full h-48 bg-gray-200 rounded-md mb-4"></div> {/* Image placeholder */}
           <div className="h-6 bg-gray-200 rounded w-3/4 mb-2"></div> {/* Title placeholder */}
           <div className="h-4 bg-gray-200 rounded w-full mb-2"></div> {/* Description line 1 */}
-          <div className="h-4 bg-gray-200 rounded w-5/6 mb-2"></div> {/* Description line 2 */}
-          <div className="h-4 bg-gray-200 rounded w-3/4"></div> {/* Description line 2 */}
+          <div className="h-4 bg-gray-200 rounded w-5/6"></div> {/* Description line 2 */}
         </div>
       ))}
     </div>

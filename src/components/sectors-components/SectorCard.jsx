@@ -27,13 +27,13 @@ const SectorCard = ({ sector }) => {
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
           {sector?.title}
         </h3>
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
           {sector?.description}
         </p>
         <div className="mt-4">
           <NextIntlLink
             href={`/sectors/${sector._id}`}
-            className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
+            className="text-btn-bg hover:text-btn-bg/90 font-medium inline-flex items-center"
           >
             Read More
             <svg
