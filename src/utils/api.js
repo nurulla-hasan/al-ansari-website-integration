@@ -2,7 +2,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BASE_URL
+  baseURL: "http://10.0.60.118:5006"
 });
 
 api.interceptors.response.use(
