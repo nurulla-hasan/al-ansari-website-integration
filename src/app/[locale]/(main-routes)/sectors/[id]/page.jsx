@@ -27,7 +27,7 @@ const SectorDetailsPage = () => {
   const breadcrumbs = [
     { name: tNavbar('home'), href: "/" },
     { name: tSimpleHero('sectorsTitle'), href: "/sectors" },
-    { name: sector?.title || "Details", href: `/sectors/${id}` },
+    { name: "Sector Details", href: `/sectors/${id}` },
   ];
 
   return (

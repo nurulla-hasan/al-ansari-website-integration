@@ -121,6 +121,9 @@
   "CsrPage": {
     "noCsrAvailable": "لا توجد بيانات متاحة للمسؤولية الاجتماعية للشركات"
   },
+  "AwardsPage": {
+    "noAwardsAvailable": "لا توجد جوائز متاحة"
+  },
   "AboutPage": {
     "aboutUsTitle": "من نحن",
     "headerTitle": "قيمنا",

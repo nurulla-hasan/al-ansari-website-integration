@@ -47,7 +47,7 @@ const SimpleHero = ({
             </nav>
 
             {/* Page Title */}
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{displayTitle}</h1>
+            <h1 className="sm:text-2xl lg:text-4xl font-bold text-white">{displayTitle}</h1>
           </div>
           {children && <div className="mt-4 md:mt-0 flex-shrink-0">{children}</div>}
         </div>

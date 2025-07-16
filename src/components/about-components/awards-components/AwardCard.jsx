@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import config from "@/config/config";
 
 const AwardCard = ({ data }) => {
     return (
         <div className="bg-white rounded-lg overflow-hidden border border-gray-200">
             <div className="relative w-full h-48">
                 <Image
-                    src={data?.imageSrc}
+                    src={data?.image ? `${config.BASE_URL}${data.image}` : "/assets/placeholder-image.jpg"}
                     alt={data?.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

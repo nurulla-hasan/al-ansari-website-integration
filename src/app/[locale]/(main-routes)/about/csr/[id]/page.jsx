@@ -10,6 +10,7 @@ import ErrorDisplay from "@/components/shared/ErrorDisplay";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import config from "@/config/config";
+import { formatDate } from "@/utils/dateFormatter";
 
 const CsrDetailsPage = () => {
   const { id } = useParams();
@@ -28,7 +29,7 @@ const CsrDetailsPage = () => {
     { name: tNavbar('home'), href: "/" },
     { name: tSimpleHero('aboutUsTitle'), href: "/about" },
     { name: tSimpleHero('csrTitle'), href: "/about/csr" },
-    { name: csr?.title || "Details", href: `/about/csr/${id}` },
+    { name: "CSR Details", href: `/about/csr/${id}` },
   ];
 
   return (
@@ -40,10 +41,16 @@ const CsrDetailsPage = () => {
         {!isLoading && isError && <ErrorDisplay message="Failed to load CSR details." />}
         {!isLoading && !isError && csr ? (
           <>
-            <div className="w-full mb-8">
+            <div className="mb-8 space-y-2">
+              <p className="text-gray-500">{formatDate(csr?.createdAt)}</p>
+              <h1 className="text-2xl md:text-3xl font-bold text-text-title mb-4">
+                {csr?.title}
+              </h1>
+            </div>
+            <div className="flex flex-col gap-4 md:gap-8">
               <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-md">
                 <Image
-                  src={csr?.image ? `${config.BASE_URL}${csr?.image}`: "/assets/placeholder-image.jpg"}
+                  src={csr?.image ? `${config.BASE_URL}${csr?.image}` : "/assets/placeholder-image.jpg"}
                   alt={csr?.title}
                   fill
                   sizes="100vw"
@@ -51,11 +58,6 @@ const CsrDetailsPage = () => {
                   priority={true}
                 />
               </div>
-            </div>
-            <div className="w-full">
-              <h1 className="text-2xl md:text-3xl font-bold text-text-title mb-4">
-                {csr?.title}
-              </h1>
               <p className="text-text-muted leading-relaxed">
                 {csr?.description}
               </p>

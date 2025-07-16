@@ -30,7 +30,7 @@ const PersonDetailsPage = () => {
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },
         { name: tSimpleHero('peopleTitle'), href: "/people" },
-        { name: person?.fullName || "Details", href: `/people/${id}` }
+        { name: "People Details", href: `/people/${id}` }
     ];
 
     return (

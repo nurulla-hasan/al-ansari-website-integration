@@ -123,6 +123,9 @@
   "CsrPage": {
     "noCsrAvailable": "No CSR data available"
   },
+  "AwardsPage": {
+    "noAwardsAvailable": "No awards available"
+  },
   "AboutPage": {
     "aboutUsTitle": "About Us",
     "headerTitle": "Our Values",

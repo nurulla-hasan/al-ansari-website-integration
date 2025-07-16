@@ -45,7 +45,7 @@ const EventDetailsPage = () => {
                     <>
                         <div className="mb-8 space-y-2">
                             <p className="text-gray-500">{formatDate(event?.createdAt)}</p>
-                            <h1 className="text-3xl font-bold">{event?.title}</h1>
+                            <h1 className="text-2xl md:text-3xl font-bold text-text-title mb-4">{event?.title}</h1>
                         </div>
                         <div className="flex flex-col gap-8">
                             <div className="relative w-full h-96">
