@@ -57,7 +57,9 @@ const NewsletterDetailsPage = () => {
                                     className="object-cover rounded-lg"
                                 />
                             </div>
-                            <div dangerouslySetInnerHTML={{ __html: newsletter?.description }} />
+                            <p className="text-text-muted leading-relaxed">
+                                {newsletter?.description}
+                            </p>
                         </div>
                     </>
                 )}

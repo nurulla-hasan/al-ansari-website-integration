@@ -57,7 +57,9 @@ const UpdateDetailsPage = () => {
                                     className="object-cover rounded-lg"
                                 />
                             </div>
-                            <div dangerouslySetInnerHTML={{ __html: update?.description }} />
+                            <p className="text-text-muted leading-relaxed">
+                                {update?.description}
+                            </p>
                         </div>
                     </>
                 )}

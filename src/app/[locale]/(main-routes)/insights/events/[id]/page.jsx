@@ -57,7 +57,9 @@ const EventDetailsPage = () => {
                                     className="object-cover rounded-lg"
                                 />
                             </div>
-                            <div dangerouslySetInnerHTML={{ __html: event?.description }} />
+                            <p className="text-text-muted leading-relaxed">
+                                {event?.description}
+                            </p>
                         </div>
                     </>
                 )}

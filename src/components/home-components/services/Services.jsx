@@ -36,7 +36,7 @@ const Services = () => {
                                 >
                                     <div className="w-full h-52 relative">
                                         <Image
-                                            src={service?.image}
+                                            src={service?.image ? service.image : "/assets/placeholder-image.jpg"}
                                             alt={service?.title}
                                             fill
                                             style={{ objectFit: 'cover' }}
