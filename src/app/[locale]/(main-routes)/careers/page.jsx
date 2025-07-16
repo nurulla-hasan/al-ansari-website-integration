@@ -4,13 +4,22 @@ import BusinessServices from "@/components/careers-components/BusinessServices";
 import Internships from "@/components/careers-components/Internships";
 import Lawyers from "@/components/careers-components/Lawyers";
 import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
+import { useTranslations } from "next-intl";
 
-const page = () => {
+const Page = () => {
+    const t = useTranslations("SimpleHero");
+    const tNavbar = useTranslations("Navbar");
+
+    const breadcrumbs = [
+        { name: tNavbar("home"), href: "/" },
+        { name: t("careersTitle"), href: "/careers" }
+    ];
+
     return (
         <div className="min-h-minus-header">
             <SimpleHero
-                title="Careers"
-                breadcrumbs={[{ name: "Home", href: "/" }, { name: "Careers", href: "/careers" }]}
+                title={t("careersTitle")}
+                breadcrumbs={breadcrumbs}
             />
             <Lawyers />
             <BusinessServices />
@@ -20,4 +29,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

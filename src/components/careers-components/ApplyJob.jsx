@@ -2,12 +2,14 @@
 
 import { useForm } from "react-hook-form"
 import { useState } from "react"
-import {  X } from "lucide-react"
+import { X } from "lucide-react"
 import InputField from "../helper/input-helper/InputField"
 import SelectField from "../helper/select-helper/SelectField"
 import PageLayout from "../layout/PageLayout"
+import { useTranslations } from "next-intl"
 
 const ApplyJob = () => {
+    const t = useTranslations("CareersPage")
     const [uploadedFile, setUploadedFile] = useState(null)
 
     const {
@@ -19,21 +21,21 @@ const ApplyJob = () => {
 
     // Options for dropdowns
     const applyingForOptions = [
-        { value: "lawyer", label: "Lawyer" },
-        { value: "paralegal", label: "Paralegal" },
-        { value: "legal-assistant", label: "Legal Assistant" },
-        { value: "intern", label: "Intern" },
-        { value: "other", label: "Other" },
+        { value: "lawyer", label: t("applyingForOptionLawyer") },
+        { value: "paralegal", label: t("applyingForOptionParalegal") },
+        { value: "legal-assistant", label: t("applyingForOptionLegalAssistant") },
+        { value: "intern", label: t("applyingForOptionIntern") },
+        { value: "other", label: t("applyingForOptionOther") },
     ]
 
     const countryOptions = [
-        { value: "qatar", label: "Qatar" },
-        { value: "uae", label: "UAE" },
-        { value: "saudi-arabia", label: "Saudi Arabia" },
-        { value: "kuwait", label: "Kuwait" },
-        { value: "bahrain", label: "Bahrain" },
-        { value: "oman", label: "Oman" },
-        { value: "other", label: "Other" },
+        { value: "qatar", label: t("countryOptionQatar") },
+        { value: "uae", label: t("countryOptionUAE") },
+        { value: "saudi-arabia", label: t("countryOptionSaudiArabia") },
+        { value: "kuwait", label: t("countryOptionKuwait") },
+        { value: "bahrain", label: t("countryOptionBahrain") },
+        { value: "oman", label: t("countryOptionOman") },
+        { value: "other", label: t("countryOptionOther") },
     ]
 
     const onSubmit = (data) => {
@@ -68,7 +70,7 @@ const ApplyJob = () => {
             <PageLayout>
                 {/* Header */}
                 <div className="mb-8">
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-poltawski font-semibold text-text-title mb-4 md:mb-6">Apply for a Job or Internship</h1>
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-poltawski font-semibold text-text-title mb-4 md:mb-6">{t("applyJobTitle")}</h1>
                 </div>
 
                 {/* Form */}
@@ -78,33 +80,33 @@ const ApplyJob = () => {
                         <div className="space-y-6">
                             {/* Full Name */}
                             <InputField
-                                label="Full Name"
+                                label={t("fullNameLabel")}
                                 name="fullName"
                                 register={register}
-                                placeholder="Enter your full name"
+                                placeholder={t("fullNamePlaceholder")}
                                 required={true}
                                 error={errors.fullName}
                             />
 
                             {/* Email */}
                             <InputField
-                                label="Email"
+                                label={t("emailLabel")}
                                 name="email"
                                 type="email"
                                 register={register}
-                                placeholder="Enter your email"
+                                placeholder={t("emailPlaceholder")}
                                 required={true}
                                 error={errors.email}
                             />
 
                             {/* Applying For - Using Custom SelectField */}
                             <SelectField
-                                label="Applying For"
+                                label={t("applyingForLabel")}
                                 name="applyingFor"
                                 options={applyingForOptions}
                                 register={register}
                                 required={true}
-                                defaultOption="Select position"
+                                defaultOption={t("applyingForDefaultOption")}
                                 error={errors.applyingFor}
                             />
                         </div>
@@ -113,30 +115,30 @@ const ApplyJob = () => {
                         <div className="space-y-6">
                             {/* Phone Number */}
                             <InputField
-                                label="Phone Number"
+                                label={t("phoneNumberLabel")}
                                 name="phoneNumber"
                                 type="tel"
                                 register={register}
-                                placeholder="Enter your phone number"
+                                placeholder={t("phoneNumberPlaceholder")}
                                 required={true}
                                 error={errors.phoneNumber}
                             />
 
                             {/* Country - Using Custom SelectField */}
                             <SelectField
-                                label="Country"
+                                label={t("countryLabel")}
                                 name="country"
                                 options={countryOptions}
                                 register={register}
                                 required={true}
-                                defaultOption="Select country"
+                                defaultOption={t("countryDefaultOption")}
                                 error={errors.country}
                             />
 
                             {/* Upload CV */}
                             <div className="space-y-1 w-full">
                                 <label htmlFor="cv" className="block text-xs text-gray-600">
-                                    Upload your CV
+                                    {t("uploadCVLabel")}
                                 </label>
                                 <div className="flex gap-2">
                                     <div className="flex-1 relative">
@@ -163,7 +165,7 @@ const ApplyJob = () => {
                                             onClick={() => document.getElementById("cv").click()}
                                             className="px-4 py-2 bg-btn-bg text-white text-xs font-medium rounded-sm hover:bg-btn-bg/90 transition-colors cursor-pointer"
                                         >
-                                            Browse
+                                            {t("browseButton")}
                                         </button>
                                     )}
                                 </div>
@@ -174,13 +176,13 @@ const ApplyJob = () => {
                     {/* Cover Letter - Full Width */}
                     <div className="space-y-1 w-full">
                         <label htmlFor="coverLetter" className="block text-xs text-gray-600">
-                            Cover Letter
+                            {t("coverLetterLabel")}
                         </label>
                         <textarea
                             id="coverLetter"
                             {...register("coverLetter")}
                             rows={8}
-                            placeholder="Write here"
+                            placeholder={t("coverLetterPlaceholder")}
                             className="w-full border border-gray-300 focus:outline-none focus:ring-1 focus:ring-btn-bg px-2 py-2 rounded-sm text-xs placeholder:text-xs outline-none transition-all duration-300 resize-none"
                         />
                     </div>
@@ -192,13 +194,13 @@ const ApplyJob = () => {
                             onClick={handleCancel}
                             className="px-6 py-2 border border-btn-bg rounded-sm text-btn-bg text-sm font-medium transition-colors cursor-pointer"
                         >
-                            Cancel
+                            {t("cancelButton")}
                         </button>
                         <button
                             type="submit"
                             className="px-6 py-2 bg-btn-bg text-white text-sm font-medium rounded-sm hover:bg-btn-bg/90 transition-colors cursor-pointer"
                         >
-                            Submit
+                            {t("submitButton")}
                         </button>
                     </div>
                 </form>

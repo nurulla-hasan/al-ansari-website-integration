@@ -1,10 +1,13 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import SoftPatternColumns from "../abstract-background/SoftPatternColumns";
 import PageLayout from "../layout/PageLayout";
 
 const BusinessServices = () => {
+    const t = useTranslations("CareersPage");
+
     return (
         <section className="relative overflow-hidden">
             <PageLayout>
@@ -25,10 +28,10 @@ const BusinessServices = () => {
                     {/* Content Section */}
                     <div className="lg:w-1/2 text-center lg:text-left relative z-10 w-full lg:order-2">
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-poltawski font-semibold text-text-title mb-4 md:mb-6">
-                            Business Services
+                            {t("businessServicesTitle")}
                         </h2>
                         <p className="text-base px-4 md:px-0 md:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 md:mb-8 max-w-xl lg:max-w-none mx-auto lg:mx-0">
-                            Our business services staff support our delivery of legal services, and we consider our people to be key to our success. If you have experience in HR, IT, litigation support, secretarial services, finance or marketing please contact us using the online application process below.
+                            {t("businessServicesDescription")}
                         </p>
 
                         {/* Geometric pattern in the background */}
