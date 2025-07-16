@@ -1,60 +1,72 @@
+"use client";
+
+import { useParams } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { api } from "@/utils/api";
 import PageLayout from "@/components/layout/PageLayout";
 import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
-import { csrData } from "@/data/data";
-import { getTranslations } from "next-intl/server"; 
+import DetailsSkeletonLoader from "@/components/shared/DetailsSkeletonLoader";
+import ErrorDisplay from "@/components/shared/ErrorDisplay";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import config from "@/config/config";
 
-const CsrDetails = async ({ params }) => {
-    const tCsrDetailsPage = await getTranslations('CsrDetailsPage');
-    const tSimpleHero = await getTranslations('SimpleHero'); 
-    const tNavbar = await getTranslations('Navbar');        
+const CsrDetailsPage = () => {
+  const { id } = useParams();
+  const tNavbar = useTranslations('Navbar');
+  const tSimpleHero = useTranslations('SimpleHero');
 
+  const { data: responseData, isLoading, isError } = useQuery({
+    queryKey: ["csr", id],
+    queryFn: () => api.get(`/dashboard/csr/${id}`),
+    enabled: !!id,
+  });
 
-    const { id } = params; 
-    const item = csrData.find((dataItem) => dataItem.id === id); 
+  const csr = responseData?.data?.data;
 
-    if (!item) {
-        return (
-            <div className="min-h-minus-header flex items-center justify-center">
-                <p className="text-lg text-red-500">{tCsrDetailsPage('notFound')}</p> 
+  const breadcrumbs = [
+    { name: tNavbar('home'), href: "/" },
+    { name: tSimpleHero('aboutUsTitle'), href: "/about" },
+    { name: tSimpleHero('csrTitle'), href: "/about/csr" },
+    { name: csr?.title || "Details", href: `/about/csr/${id}` },
+  ];
+
+  return (
+    <div className="min-h-minus-header">
+      <SimpleHero title={csr?.title} breadcrumbs={breadcrumbs} />
+
+      <PageLayout>
+        {isLoading && <DetailsSkeletonLoader />}
+        {!isLoading && isError && <ErrorDisplay message="Failed to load CSR details." />}
+        {!isLoading && !isError && csr ? (
+          <>
+            <div className="w-full mb-8">
+              <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-md">
+                <Image
+                  src={csr?.image ? `${config.BASE_URL}${csr?.image}`: "/assets/placeholder-image.jpg"}
+                  alt={csr?.title}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                  priority={true}
+                />
+              </div>
             </div>
-        );
-    }
-
-    const breadcrumbs = [
-        { name: tNavbar('home'), href: "/" }, 
-        { name: tSimpleHero('aboutUsTitle'), href: "/about" },
-        { name: tSimpleHero('csrTitle'), href: "/about/csr" }, 
-        { name: tSimpleHero('detailsTitle'), href: `/about/csr/${item?.id}` } 
-    ];
-
-    return (
-        <div>
-            <SimpleHero
-                title={tSimpleHero('detailsTitle')} 
-                breadcrumbs={breadcrumbs}
-            />
-            <PageLayout>
-                <h1 className="font-poltawski text-2xl md:text-5xl font-bold mb-8 md:mb-12 text-text-title">
-                    {item?.title}
-                </h1>
-
-                <div className="relative w-full aspect-[16/5] rounded-xl overflow-hidden mb-8">
-                    <Image
-                        src={item?.imageSrc}
-                        alt={item?.title || tCsrDetailsPage('notFound')}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                </div>
-
-                <p className="md:text-xl text-sm px-2 text-gray-700 leading-relaxed">
-                    {item?.description}
-                </p>
-            </PageLayout>
-        </div>
-    );
+            <div className="w-full">
+              <h1 className="text-2xl md:text-3xl font-bold text-text-title mb-4">
+                {csr?.title}
+              </h1>
+              <p className="text-text-muted leading-relaxed">
+                {csr?.description}
+              </p>
+            </div>
+          </>
+        ) : (
+          !isLoading && !isError && !csr && <ErrorDisplay message="CSR not found." />
+        )}
+      </PageLayout>
+    </div>
+  );
 };
 
-export default CsrDetails;
+export default CsrDetailsPage;

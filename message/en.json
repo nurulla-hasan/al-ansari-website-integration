@@ -120,6 +120,9 @@
     "eventsSectionTitle": "Events",
     "newslettersSectionTitle": "Newsletters"
   },
+  "CsrPage": {
+    "noCsrAvailable": "No CSR data available"
+  },
   "AboutPage": {
     "aboutUsTitle": "About Us",
     "headerTitle": "Our Values",

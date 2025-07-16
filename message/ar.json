@@ -118,6 +118,9 @@
     "eventsSectionTitle": "الفعاليات",
     "newslettersSectionTitle": "النشرات الإخبارية"
   },
+  "CsrPage": {
+    "noCsrAvailable": "لا توجد بيانات متاحة للمسؤولية الاجتماعية للشركات"
+  },
   "AboutPage": {
     "aboutUsTitle": "من نحن",
     "headerTitle": "قيمنا",
