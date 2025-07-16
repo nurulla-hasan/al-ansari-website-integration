@@ -15,7 +15,7 @@ const ContactUs = () => {
     };
 
     return (
-        <div className="bg-bg-primary">
+        <div id="contact-us" className="bg-bg-primary md:py-20">
             <PageLayout>
                 <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-10 lg:gap-12">
                     <div className="w-full md:w-1/2 lg:w-2/5 xl:w-1/2 h-64 md:h-auto relative">
