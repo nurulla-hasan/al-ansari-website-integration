@@ -11,11 +11,11 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { useQuery } from '@tanstack/react-query'
 import { api } from '@/utils/api'
-import InsightsCardSkeletonLoader from '@/components/shared/InsightsCardSkeletonLoader'
 import ErrorDisplay from '@/components/shared/ErrorDisplay'
 import config from '@/config/config'
 import { formatDate } from '@/utils/dateFormatter'
 import Link from 'next/link'
+import SliderSkeleton from '@/components/shared/SliderSkeleton'
 
 
 const LatestNews = () => {
@@ -44,7 +44,7 @@ const LatestNews = () => {
                 </div>
 
                 <div className="relative z-10 px-0 sm:px-12 md:px-16 lg:px-20 xl:px-24">
-                    {isLoading && <InsightsCardSkeletonLoader count={3} />}
+                    {isLoading && <SliderSkeleton count={2} />}
                     {!isLoading && isError && <ErrorDisplay message="Failed to load latest news." />}
                     {!isLoading && !isError && updates && updates.length > 0 ? (
                         <Swiper

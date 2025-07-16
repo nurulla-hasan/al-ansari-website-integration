@@ -229,7 +229,7 @@ const Navbar = () => {
                 {/* Language Toggle for Mobile */}
                 <div className="flex bg-bg-primary p-1 border border-btn-bg rounded-md *:rounded-md overflow-hidden w-full">
                     {/* 'Eng' */}
-                    <NextIntlLink href={currentPathname} locale="en" className="flex-1">
+                    <NextIntlLink scroll={false} href={currentPathname} locale="en" className="flex-1">
                         <button
                             className={`px-3 py-1 text-xs font-medium transition-colors w-full h-full ${locale === "en"
                                 ? "bg-btn-bg text-white"
@@ -241,7 +241,7 @@ const Navbar = () => {
                         </button>
                     </NextIntlLink>
                     {/* 'عربي' */}
-                    <NextIntlLink href={currentPathname} locale="ar" className="flex-1">
+                    <NextIntlLink scroll={false} href={currentPathname} locale="ar" className="flex-1">
                         <button
                             className={`px-3 py-1 text-xs font-medium transition-colors w-full h-full ${locale === "ar"
                                 ? "bg-btn-bg text-white"

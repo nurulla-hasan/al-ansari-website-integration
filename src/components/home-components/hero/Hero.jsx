@@ -41,7 +41,7 @@ const Hero = () => {
         </h1>
 
         {/* Statistics */}
-        <div className="grid grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
           {stats.map((stat, index) => (
             <div key={index} className="text-center rounded-xl backdrop-blur-lg bg-white/10 py-8 px-3">
               <div className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#C9B164] mb-2 sm:mb-4">

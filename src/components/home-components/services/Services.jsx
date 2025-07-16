@@ -1,6 +1,5 @@
 "use client";
 import PageLayout from '@/components/layout/PageLayout';
-import { servicesItems } from '@/data/data';
 import { ArrowDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -30,7 +29,7 @@ const Services = () => {
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                         {
-                            servicesItems.map((service) => (
+                            t.raw('serviceItems').map((service) => (
                                 <div
                                     key={service?._id}
                                     className="flex flex-col bg-white border border-gray-200 rounded-xl overflow-hidden"
