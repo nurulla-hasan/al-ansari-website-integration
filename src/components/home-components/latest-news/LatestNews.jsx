@@ -12,7 +12,6 @@ import { useTranslations } from 'next-intl'
 import { useQuery } from '@tanstack/react-query'
 import { api } from '@/utils/api'
 import ErrorDisplay from '@/components/shared/ErrorDisplay'
-import config from '@/config/config'
 import { formatDate } from '@/utils/dateFormatter'
 import Link from 'next/link'
 import SliderSkeleton from '@/components/shared/SliderSkeleton'
@@ -72,7 +71,7 @@ const LatestNews = () => {
                                     <div className='bg-white rounded-2xl overflow-hidden p-4 h-full'>
                                         <div className="bg-white rounded-xl overflow-hidden flex flex-col gap-3 lg:gap-0 items-center lg:flex-row h-full">
                                             <Image
-                                                src={item?.image ? `${config.BASE_URL}${item.image}` : '/assets/latest-news-01.jpg'}
+                                                src={item?.image ? `${process.env.NEXT_PUBLIC_BASE_URL}${item.image}` : '/assets/latest-news-01.jpg'}
                                                 alt={item?.title}
                                                 width={120}
                                                 height={120}

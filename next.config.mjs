@@ -1,8 +1,8 @@
-import config from './src/config/config.js';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
-const parsedBaseUrl = new URL(config.BASE_URL);
+const parsedBaseUrl = new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000');
+console.log(parsedBaseUrl);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

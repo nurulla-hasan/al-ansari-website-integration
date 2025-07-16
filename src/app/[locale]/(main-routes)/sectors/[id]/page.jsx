@@ -9,7 +9,7 @@ import DetailsSkeletonLoader from "@/components/shared/DetailsSkeletonLoader";
 import ErrorDisplay from "@/components/shared/ErrorDisplay";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import config from "@/config/config";
+
 
 const SectorDetailsPage = () => {
   const { id } = useParams();
@@ -42,7 +42,7 @@ const SectorDetailsPage = () => {
             <div className="w-full mb-8">
               <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-md">
                 <Image
-                  src={sector?.image ? `${config.BASE_URL}${sector?.image}`: "/assets/placeholder-image.jpg"}
+                  src={sector?.image ? `${process.env.NEXT_PUBLIC_BASE_URL}${sector?.image}`: "/assets/placeholder-image.jpg"}
                   alt={sector?.title}
                   fill
                   sizes="100vw"

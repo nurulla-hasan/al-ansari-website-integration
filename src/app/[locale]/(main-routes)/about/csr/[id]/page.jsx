@@ -9,7 +9,7 @@ import DetailsSkeletonLoader from "@/components/shared/DetailsSkeletonLoader";
 import ErrorDisplay from "@/components/shared/ErrorDisplay";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import config from "@/config/config";
+
 import { formatDate } from "@/utils/dateFormatter";
 
 const CsrDetailsPage = () => {
@@ -50,7 +50,7 @@ const CsrDetailsPage = () => {
             <div className="flex flex-col gap-4 md:gap-8">
               <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-md">
                 <Image
-                  src={csr?.image ? `${config.BASE_URL}${csr?.image}` : "/assets/placeholder-image.jpg"}
+                  src={csr?.image ? `${process.env.NEXT_PUBLIC_BASE_URL}${csr?.image}` : "/assets/placeholder-image.jpg"}
                   alt={csr?.title}
                   fill
                   sizes="100vw"

@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import config from "@/config/config";
+
 
 const CsrCard = ({ data }) => {
     return (
         <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
             <div className="relative w-full h-48">
                 <Image
-                    src={data?.image ? `${config.BASE_URL}${data.image}` : "/assets/placeholder-image.jpg"}
+                    src={data?.image ? `${process.env.NEXT_PUBLIC_BASE_URL}${data.image}` : "/assets/placeholder-image.jpg"}
                     alt={data.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

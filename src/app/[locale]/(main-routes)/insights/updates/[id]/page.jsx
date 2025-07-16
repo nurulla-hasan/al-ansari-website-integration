@@ -3,7 +3,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import DetailsSkeletonLoader from "@/components/shared/DetailsSkeletonLoader";
 import ErrorDisplay from "@/components/shared/ErrorDisplay";
 import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
-import config from "@/config/config";
+
 import { api } from "@/utils/api";
 import { formatDate } from "@/utils/dateFormatter";
 import { useQuery } from "@tanstack/react-query";
@@ -50,7 +50,7 @@ const UpdateDetailsPage = () => {
                         <div className="flex flex-col gap-8">
                             <div className="relative w-full h-96">
                                 <Image
-                                    src={update?.image ? `${config.BASE_URL}${update?.image}` : "/assets/placeholder-insights.jpg"}
+                                    src={update?.image ? `${process.env.NEXT_PUBLIC_BASE_URL}${update?.image}` : "/assets/placeholder-insights.jpg"}
                                     alt={update?.title}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"
