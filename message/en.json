@@ -185,9 +185,7 @@
     "noFraudAvailable": "No fraud available"
   },
   "DisclaimerPage": {
-    "para1": "We prepared the materials and links on this web site for informational purposes. The transmission and display of the information contained at, or accessed through, this web site is not intended to create, and receipt or viewing of it does not constitute, an attorney-client relationship. Since we are not providing legal advice through this web site, you should not act upon any information you might receive from it without seeking professional counsel.",
-    "para2": "As you no doubt appreciate, hiring a lawyer is an important decision. We would welcome the opportunity to consider having Al-Ansari & Associates to become your lawyer. If you are interested in possibly retaining us, we would be delighted to send you additional information about our qualifications, experience, and standard terms of engagement. Please do not send us any confidential information without first speaking with one of our partners and receiving explicit authorization to send us the information.",
-    "para3": "The materials on this web site are intended, but not guaranteed, to reflect current legal developments and the current state of the law. We do not, however, represent, warrant, or guarantee they will be complete, accurate, or up to date when you view them. Al-Ansari& Associates is not responsible for any third-party content that may be accessed through this web site. Any reference to third-party information, products, or services linked to this web site does not constitute an expressed or implied endorsement by Al-Ansari & Associates."
+    "noFraudAvailable": "No disclaimer available"
   },
   "CareersPage": {
     "lawyersTitle": "Lawyers",

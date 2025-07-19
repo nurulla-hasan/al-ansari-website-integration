@@ -178,7 +178,7 @@ const Navbar = () => {
                 <div className="fixed inset-0 bg-black/50 backdrop-blur-sm bg-opacity-50 z-40 lg:hidden" onClick={() => setIsMobileMenuOpen(false)}></div>
             )}
             <div
-                className={`fixed top-0 left-0 h-full rounded-r-2xl w-64 bg-white shadow-lg p-6 transform transition-transform duration-300 ease-in-out z-50 lg:hidden
+                className={`fixed top-0 left-0 h-full  w-64 bg-white shadow-lg p-6 transform transition-transform duration-300 ease-in-out z-50 lg:hidden
                     ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
             >
                 <div className="flex justify-between items-center mb-6">
