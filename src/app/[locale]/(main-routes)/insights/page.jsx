@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import { api } from '@/utils/api';
 import ErrorDisplay from '@/components/shared/ErrorDisplay';
 import { useTranslations } from 'next-intl';
-import InsightsCardSkeletonLoader from '@/components/shared/InsightsCardSkeletonLoader';
+import InsightsCardSkeletonLoader from '@/components/shared/InsightsCardSkeletonLoader'; 
 
 const InsightsPage = () => {
     const tInsights = useTranslations('InsightsPage');

@@ -1,8 +1,8 @@
 
 import axios from "axios";
-
+export const baseURL = "http://10.0.60.118:5006"
 export const api = axios.create({
-  baseURL: "http://10.0.60.118:5006"
+  baseURL: baseURL
 });
 
 api.interceptors.response.use(

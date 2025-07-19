@@ -7,7 +7,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
 import { useTranslations } from 'next-intl';
 import { useQuery } from '@tanstack/react-query';
-import { api } from '@/utils/api';
+import { api, baseURL } from '@/utils/api';
 
 import DetailsSkeletonLoader from "@/components/shared/DetailsSkeletonLoader";
 import ErrorDisplay from "@/components/shared/ErrorDisplay";
@@ -50,7 +50,7 @@ const PersonDetailsPage = () => {
                             <div className="relative flex flex-col md:flex-row gap-6 md:gap-10 items-center">
                                 <div className="relative w-48 h-60 sm:w-64 sm:h-80 md:w-80 md:h-96 flex-shrink-0 rounded-2xl overflow-hidden bg-gray-200 -mt-10 sm:-mt-16 md:-mt-20">
                                     <Image
-                                        src={person.profile_image ? `${process.env.NEXT_PUBLIC_BASE_URL}${person.profile_image}` : "/placeholder.svg"}
+                                        src={person.profile_image ? `${baseURL}${person.profile_image}` : "/placeholder.svg"}
                                         alt={person.fullName}
                                         fill
                                         className="object-cover"

@@ -1,6 +1,7 @@
 "use client";
 
 
+import { baseURL } from "@/utils/api";
 import { formatDate } from "@/utils/dateFormatter";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,7 +16,7 @@ const InsightsCard = ({ data, pathname }) => {
             {/* Image Container */}
             <div className="relative w-[100%] h-56 sm:w-64 sm:h-64 md:w-48 md:h-48 lg:w-56 lg:h-56 overflow-hidden rounded-xl flex-shrink-0">
                 <Image
-                    src={data?.image ? `${process.env.NEXT_PUBLIC_BASE_URL}${data?.image}` : "/assets/placeholder-insights.jpg"}
+                    src={data?.image ? `${baseURL}${data?.image}` : "/assets/placeholder-insights.jpg"}
                     alt={data?.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

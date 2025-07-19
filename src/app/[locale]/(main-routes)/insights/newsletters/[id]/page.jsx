@@ -4,7 +4,7 @@ import DetailsSkeletonLoader from "@/components/shared/DetailsSkeletonLoader";
 import ErrorDisplay from "@/components/shared/ErrorDisplay";
 import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
 
-import { api } from "@/utils/api";
+import { api, baseURL } from "@/utils/api";
 import { formatDate } from "@/utils/dateFormatter";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
@@ -50,7 +50,7 @@ const NewsletterDetailsPage = () => {
                         <div className="flex flex-col gap-8">
                             <div className="relative w-full h-96">
                                 <Image
-                                    src={newsletter?.image ? `${process.env.NEXT_PUBLIC_BASE_URL}${newsletter?.image}` : "/assets/placeholder-insights.jpg"}
+                                    src={newsletter?.image ? `${baseURL}${newsletter?.image}` : "/assets/placeholder-insights.jpg"}
                                     alt={newsletter?.title}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"

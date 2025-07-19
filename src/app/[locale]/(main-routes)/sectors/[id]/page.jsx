@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { api } from "@/utils/api";
+import { api, baseURL } from "@/utils/api";
 import PageLayout from "@/components/layout/PageLayout";
 import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
 import DetailsSkeletonLoader from "@/components/shared/DetailsSkeletonLoader";
@@ -42,7 +42,7 @@ const SectorDetailsPage = () => {
             <div className="w-full mb-8">
               <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-md">
                 <Image
-                  src={sector?.image ? `${process.env.NEXT_PUBLIC_BASE_URL}${sector?.image}`: "/assets/placeholder-image.jpg"}
+                  src={sector?.image ? `${baseURL}${sector?.image}`: "/assets/placeholder-image.jpg"}
                   alt={sector?.title}
                   fill
                   sizes="100vw"

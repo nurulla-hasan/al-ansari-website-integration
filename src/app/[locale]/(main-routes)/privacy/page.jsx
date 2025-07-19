@@ -1,12 +1,23 @@
 "use client";
 import PageLayout from '@/components/layout/PageLayout';
+import ErrorDisplay from '@/components/shared/ErrorDisplay';
 import SimpleHero from '@/components/shared/simple-hero/SimpleHero';
+import StaticPageSkeleton from '@/components/shared/StaticPageSkeleton';
+import { api } from '@/utils/api';
+import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 
 const Privacy = () => {
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
     const tPrivacyPage = useTranslations('PrivacyPage');
+
+    const { data, isLoading, isError } = useQuery({
+        queryKey: ["privacy"],
+        queryFn: () => api.get('/dashboard/privacy')
+    })
+
+    const privacy = data?.data?.data?.description
 
     return (
         <div className='min-h-minus-header'>
@@ -19,31 +30,12 @@ const Privacy = () => {
             />
             <PageLayout>
                 {/* Introduction Section */}
-                <h2 className="text-xl md:text-2xl font-bold mb-4 text-text-title">
-                    {tPrivacyPage('introHeading')}
-                </h2>
-                <p className="mb-4 text-gray-700 leading-relaxed">
-                    {tPrivacyPage('introPara1')}
-                </p>
-                <p className="mb-4 text-gray-700 leading-relaxed">
-                    {tPrivacyPage('introPara2')}
-                </p>
-
-                {/* Restrictions on Use of Materials Section */}
-                <h2 className="text-xl md:text-2xl font-bold mt-8 mb-4 text-text-title">
-                    {tPrivacyPage('restrictionsHeading')}
-                </h2>
-                <p className="mb-4 text-gray-700 leading-relaxed">
-                    {tPrivacyPage('restrictionsPara')}
-                </p>
-
-                {/* Choice of Law and Jurisdiction Section */}
-                <h2 className="text-xl md:text-2xl font-bold mt-8 mb-4 text-text-title">
-                    {tPrivacyPage('choiceOfLawHeading')}
-                </h2>
-                <p className="mb-4 text-gray-700 leading-relaxed">
-                    {tPrivacyPage('choiceOfLawPara')}
-                </p>
+                {isLoading && <StaticPageSkeleton />}
+                {!isLoading && isError && <ErrorDisplay message="Failed to load fraud." />}
+                {!isLoading && !isError && privacy && privacy.length > 0 ?
+                    <div dangerouslySetInnerHTML={{ __html: privacy }}></div> :
+                    !isLoading && !isError && <p>{tPrivacyPage('noPrivacyAvailable')}</p>
+                }
             </PageLayout>
         </div>
     );

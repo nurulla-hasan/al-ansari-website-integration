@@ -1,6 +1,7 @@
 "use client"
 
 
+import { baseURL } from "@/utils/api";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,7 +17,7 @@ const Teams = ({ title, data }) => {
                         <Link href={`/people/${teamMember?._id}`} className="block">
                             <div className="relative w-48 h-60 rounded-2xl overflow-hidden bg-gray-200 sm:w-64 sm:h-80 md:w-[390px] md:h-[430px]">
                                 <Image
-                                    src={teamMember?.profile_image ? `${process.env.NEXT_PUBLIC_BASE_URL}${teamMember?.profile_image}` : "/assets/placeholder-image.jpg"}
+                                    src={teamMember?.profile_image ? `${baseURL}${teamMember?.profile_image}` : "/assets/placeholder-image.jpg"}
                                     alt={teamMember?.fullName || "Profile picture"}
                                     fill
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

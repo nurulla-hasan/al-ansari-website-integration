@@ -1,6 +1,10 @@
 "use client";
 import PageLayout from '@/components/layout/PageLayout';
+import ErrorDisplay from '@/components/shared/ErrorDisplay';
 import SimpleHero from '@/components/shared/simple-hero/SimpleHero';
+import StaticPageSkeleton from '@/components/shared/StaticPageSkeleton';
+import { api } from '@/utils/api';
+import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 
 const FroudAlert = () => {
@@ -8,35 +12,30 @@ const FroudAlert = () => {
     const tSimpleHero = useTranslations('SimpleHero');
     const tFraudAlertPage = useTranslations('FraudAlertPage');
 
+    const { data, isLoading, isError } = useQuery({
+        queryKey: ["fraud"],
+        queryFn: () => api.get('/dashboard/fraud')
+    })
+
+    const fraud = data?.data?.data?.description
+
     return (
         <div className='min-h-minus-header'>
             <SimpleHero
                 title={tSimpleHero('fraudAlertTitle')}
                 breadcrumbs={[
-                    { name: tNavbar('home'), href: "/" }, 
-                    { name: tSimpleHero('fraudAlertTitle'), href: "/fraud-alert" } 
+                    { name: tNavbar('home'), href: "/" },
+                    { name: tSimpleHero('fraudAlertTitle'), href: "/fraud-alert" }
                 ]}
             />
             <PageLayout>
                 {/* Fraud Alert Content */}
-                <h2 className="text-xl md:text-2xl font-bold mb-4 text-text-title">
-                    {tFraudAlertPage('mainHeading')}
-                </h2>
-                <p className="mb-4 text-gray-700 leading-relaxed">
-                    {tFraudAlertPage('para1')}
-                </p>
-                <p className="mb-4 text-gray-700 leading-relaxed">
-                    {tFraudAlertPage('para2')}
-                </p>
-                <p className="mb-4 text-gray-700 leading-relaxed">
-                    {tFraudAlertPage('para3')}
-                </p>
-                <p className="mb-4 text-gray-700 leading-relaxed">
-                    {tFraudAlertPage('para4')}
-                </p>
-                <p className="mb-4 text-gray-700 leading-relaxed">
-                    {tFraudAlertPage('para5')}
-                </p>
+                {isLoading && <StaticPageSkeleton />}
+                {!isLoading && isError && <ErrorDisplay message="Failed to load fraud." />}
+                {!isLoading && !isError && fraud && fraud.length > 0 ?
+                    <div dangerouslySetInnerHTML={{ __html: fraud }}></div> :
+                    !isLoading && !isError && <p>{tFraudAlertPage('noFraudAvailable')}</p>
+                }
             </PageLayout>
         </div>
     );

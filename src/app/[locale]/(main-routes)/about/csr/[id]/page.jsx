@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { api } from "@/utils/api";
+import { api, baseURL } from "@/utils/api";
 import PageLayout from "@/components/layout/PageLayout";
 import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
 import DetailsSkeletonLoader from "@/components/shared/DetailsSkeletonLoader";
@@ -50,7 +50,7 @@ const CsrDetailsPage = () => {
             <div className="flex flex-col gap-4 md:gap-8">
               <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-md">
                 <Image
-                  src={csr?.image ? `${process.env.NEXT_PUBLIC_BASE_URL}${csr?.image}` : "/assets/placeholder-image.jpg"}
+                  src={csr?.image ? `${baseURL}${csr?.image}` : "/assets/placeholder-image.jpg"}
                   alt={csr?.title}
                   fill
                   sizes="100vw"
