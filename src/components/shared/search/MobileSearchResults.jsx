@@ -4,7 +4,7 @@ import { getLinkHref } from "@/utils/linkHelper";
 import { baseURL } from '@/utils/api';
 import Image from 'next/image';
 
-const MobileSearchResults = ({ isLoading, results }) => {
+const MobileSearchResults = ({ isLoading, results, clearSearch }) => {
   if (isLoading) {
     return <p className="p-2 text-black">Loading...</p>;
   }
@@ -18,7 +18,7 @@ const MobileSearchResults = ({ isLoading, results }) => {
       {results.length > 0 ? (
         results.map((result) => (
           <li key={result.id} className="p-2 border-b border-gray-300 text-black">
-            <NextIntlLink href={getLinkHref(result)} className="flex items-center gap-2">
+            <NextIntlLink href={getLinkHref(result)} className="flex items-center gap-2" onClick={clearSearch}>
               {result.images && (
                 <div className='relative w-10 h-10'>
                   <Image

@@ -26,6 +26,12 @@ const Navbar = () => {
     const navbarRef = useRef(null);
     const searchRef = useRef(null); // Add this ref
 
+    const clearSearch = () => {
+        setSearchValue("");
+        setDebouncedValue("");
+        setShowSearch(false);
+    };
+
     // Close search when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -177,7 +183,7 @@ const Navbar = () => {
                     </div>
 
                     {showSearch && debouncedValue.trim() && (
-                        <SearchResults isLoading={isSearchLoading} results={searchResults} />
+                        <SearchResults isLoading={isSearchLoading} results={searchResults} clearSearch={clearSearch} />
                     )}
 
                     {/* Language Toggle for Desktop */}
@@ -261,7 +267,7 @@ const Navbar = () => {
                     <Search className="w-4 h-4 text-gray-600 flex-shrink-0" />
                 </div>
 
-                <MobileSearchResults isLoading={isSearchLoading} results={searchResults} />
+                <MobileSearchResults isLoading={isSearchLoading} results={searchResults} clearSearch={clearSearch} />
 
 
                 {/* Language Toggle for Mobile */}

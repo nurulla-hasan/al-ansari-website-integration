@@ -4,7 +4,7 @@ import { getLinkHref } from "@/utils/linkHelper";
 import { baseURL } from '@/utils/api';
 import Image from 'next/image';
 
-const SearchResults = ({ isLoading, results }) => {
+const SearchResults = ({ isLoading, results, clearSearch }) => {
   return (
     <div className="absolute top-full mt-2 max-w-xl bg-white border rounded-md shadow-lg z-10 text-black max-h-[50vh] overflow-y-auto scrl-hide p-2">
       {isLoading && <p className="p-2">Loading...</p>}
@@ -13,7 +13,7 @@ const SearchResults = ({ isLoading, results }) => {
           {results.length > 0 ? (
             results.map((result) => (
               <li key={result.id} className="p-2 border-b border-gray-200 hover:bg-gray-100 cursor-pointer">
-                <NextIntlLink href={getLinkHref(result)} className="flex items-center gap-2">
+                <NextIntlLink href={getLinkHref(result)} className="flex items-center gap-2" onClick={clearSearch}>
                   {result?.images && (
                     <div className='relative w-14 h-14'>
                       <Image 
