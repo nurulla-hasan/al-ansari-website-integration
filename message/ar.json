@@ -196,7 +196,7 @@
     "fullNameLabel": "الاسم الكامل",
     "fullNamePlaceholder": "أدخل اسمك الكامل",
     "emailLabel": "البريد الإلكتروني",
-    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "emailPlaceholder": "أدخل بريدك الالكتروني",
     "applyingForLabel": "التقديم لوظيفة",
     "applyingForDefaultOption": "اختر المنصب",
     "applyingForOptionLawyer": "محامي",
@@ -221,5 +221,11 @@
     "coverLetterPlaceholder": "اكتب هنا",
     "cancelButton": "إلغاء",
     "submitButton": "إرسال"
+  },
+  "SearchPage": {
+    "title": "نتائج البحث",
+    "resultsFor": "نتائج البحث عن",
+    "noResults": "لم يتم العثور على نتائج لبحثك.",
+    "enterSearchTerm": "الرجاء إدخال مصطلح بحث للعثور على النتائج."
   }
 }

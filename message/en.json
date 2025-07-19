@@ -223,5 +223,11 @@
     "coverLetterPlaceholder": "Write here",
     "cancelButton": "Cancel",
     "submitButton": "Submit"
+  },
+  "SearchPage": {
+    "title": "Search Results",
+    "resultsFor": "Results for",
+    "noResults": "No results found for your search.",
+    "enterSearchTerm": "Please enter a search term to find results."
   }
 }

@@ -60,8 +60,6 @@ const Navbar = () => {
         { name: t("contact"), href: "/contact" },
     ]
 
-    
-
     useEffect(() => {
         if (isMobileMenuOpen) {
             document.body.style.overflow = 'hidden';
@@ -85,7 +83,7 @@ const Navbar = () => {
     // Push to query param (or handle search logic)
     useEffect(() => {
         if (debouncedValue.trim()) {
-            // nextRouter.push(`/dashboard/search?query=${encodeURIComponent(debouncedValue)}`); // Uncomment this line if you want to push to search page
+            nextRouter.push(`/?searchTerm=${encodeURIComponent(debouncedValue)}`); // Uncomment this line if you want to push to search page
             console.log("Searching for:", debouncedValue);
         }
     }, [debouncedValue, nextRouter])
@@ -183,7 +181,7 @@ const Navbar = () => {
                     </div>
 
                     {showSearch && debouncedValue.trim() && (
-                        <SearchResults isLoading={isSearchLoading} results={searchResults} clearSearch={clearSearch} />
+                        <SearchResults isLoading={isSearchLoading} results={searchResults} clearSearch={clearSearch} searchTerm={debouncedValue} />
                     )}
 
                     {/* Language Toggle for Desktop */}
@@ -267,7 +265,7 @@ const Navbar = () => {
                     <Search className="w-4 h-4 text-gray-600 flex-shrink-0" />
                 </div>
 
-                <MobileSearchResults isLoading={isSearchLoading} results={searchResults} clearSearch={clearSearch} />
+                <MobileSearchResults isLoading={isSearchLoading} results={searchResults} clearSearch={clearSearch} searchTerm={debouncedValue} />
 
 
                 {/* Language Toggle for Mobile */}

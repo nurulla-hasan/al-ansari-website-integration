@@ -4,9 +4,9 @@ import { getLinkHref } from "@/utils/linkHelper";
 import { baseURL } from '@/utils/api';
 import Image from 'next/image';
 
-const SearchResults = ({ isLoading, results, clearSearch }) => {
+const SearchResults = ({ isLoading, results, clearSearch, searchTerm }) => {
   return (
-    <div className="absolute top-full mt-2 max-w-xl bg-white border rounded-md shadow-lg z-10 text-black max-h-[50vh] overflow-y-auto scrl-hide p-2">
+    <div className="absolute top-full mt-2 max-w-xl bg-white border rounded-md shadow-lg z-10 text-black max-h-[50vh] overflow-y-auto scrl-hide">
       {isLoading && <p className="p-2">Loading...</p>}
       {results && (
         <ul>
@@ -33,6 +33,13 @@ const SearchResults = ({ isLoading, results, clearSearch }) => {
             <p className="p-2">No results found.</p>
           )}
         </ul>
+      )}
+      {results && results.length > 6 && (
+        <div className="sticky -bottom-1 bg-btn-bg p-3 text-center border-t border-gray-200">
+          <NextIntlLink href={`/search?searchTerm=${encodeURIComponent(searchTerm)}`} onClick={clearSearch} className="text-white">
+            Show All Results
+          </NextIntlLink>
+        </div>
       )}
     </div>
   );

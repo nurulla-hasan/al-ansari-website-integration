@@ -4,7 +4,7 @@ import { getLinkHref } from "@/utils/linkHelper";
 import { baseURL } from '@/utils/api';
 import Image from 'next/image';
 
-const MobileSearchResults = ({ isLoading, results, clearSearch }) => {
+const MobileSearchResults = ({ isLoading, results, clearSearch, searchTerm }) => {
   if (isLoading) {
     return <p className="p-2 text-black">Loading...</p>;
   }
