@@ -176,7 +176,7 @@ const Navbar = () => {
                         <button
                             type="button"
                             onClick={() => setShowSearch(!showSearch)}
-                            className="hover:bg-gray-100 rounded-full transition-colors"
+                            className="hover:bg-gray-100 rounded-full transition-colors cursor-pointer"
                         >
                             <Search className="w-4 h-4 text-gray-600" />
                         </button>
@@ -262,7 +262,7 @@ const Navbar = () => {
                         placeholder={t("search")}
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
-                        className={`w-full bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none pr-2`}
+                        className={`w-full bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none pr-2 cursor-pointer`}
                     />
                     <Search className="w-4 h-4 text-gray-600 flex-shrink-0" />
                 </div>

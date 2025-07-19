@@ -20,6 +20,7 @@ const SearchResults = ({ isLoading, results, clearSearch }) => {
                         src={result?.images ? `${baseURL}${result?.images}` : "/assets/placeholder-insights.jpg"} 
                         alt={result.title || 'Search Result Image'} 
                         fill
+                        sizes="56px" 
                         className="object-cover rounded-md" 
                       />
                     </div>

@@ -25,6 +25,7 @@ const MobileSearchResults = ({ isLoading, results, clearSearch }) => {
                     src={result?.images ? `${baseURL}${result?.images}` : "/assets/placeholder-insights.jpg"}
                     alt={result.title || 'Search Result Image'}
                     fill
+                    sizes="40px" 
                     className="object-cover rounded-md"
                   />
                 </div>
