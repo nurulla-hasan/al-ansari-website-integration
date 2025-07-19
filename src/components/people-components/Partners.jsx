@@ -15,7 +15,7 @@ const Partners = ({ title, data }) => {
                 {data.map((partner) => (
                     <article key={partner?._id} className="bg-white rounded-lg overflow-hidden">
                         <Link href={`/people/${partner?._id}`} className="block">
-                            <div className="relative w-48 h-60 rounded-2xl overflow-hidden bg-gray-200 sm:w-64 sm:h-80 md:w-[390px] md:h-[430px]">
+                            <div className="relative w-48 h-60 rounded-2xl overflow-hidden bg-gray-200 sm:w-64 sm:h-80 md:w-[400px] md:h-[450px]">
                                 <Image
                                     src={partner?.profile_image ? `${baseURL}${partner?.profile_image}`: "/assets/placeholder-image.jpg"}
                                     alt={partner?.fullName || "Profile picture"}

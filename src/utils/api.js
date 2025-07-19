@@ -11,3 +11,11 @@ api.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+export const fetchSearchResults = async (query) => {
+  if (!query) {
+    return [];
+  }
+  const response = await api.get(`/dashboard/search?searchTerm=${query}`);
+  return response.data.data;
+};

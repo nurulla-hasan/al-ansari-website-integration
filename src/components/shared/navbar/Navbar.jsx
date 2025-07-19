@@ -1,6 +1,10 @@
 "use client"
 import { useTranslations } from "next-intl";
 import { useState, useEffect, useRef } from "react"
+import { useQuery } from "@tanstack/react-query";
+import { fetchSearchResults } from "@/utils/api";
+import SearchResults from "../search/SearchResults";
+import MobileSearchResults from "../search/MobileSearchResults";
 import { Search, Menu, X } from "lucide-react"
 
 import { usePathname } from "@/i18n/navigation";
@@ -30,21 +34,7 @@ const Navbar = () => {
         { name: t("contact"), href: "/contact" },
     ]
 
-    // Debounce effect for search
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setDebouncedValue(searchValue)
-        }, 500)
-        return () => clearTimeout(timer)
-    }, [searchValue])
-
-    // Push to query param (or handle search logic)
-    useEffect(() => {
-        if (debouncedValue.trim()) {
-            // nextRouter.push(`/search?query=${encodeURIComponent(debouncedValue)}`); // Uncomment this line if you want to push to search page
-            console.log("Searching for:", debouncedValue);
-        }
-    }, [debouncedValue, nextRouter])
+    
 
     useEffect(() => {
         if (isMobileMenuOpen) {
@@ -57,6 +47,28 @@ const Navbar = () => {
             document.body.style.overflow = 'unset';
         };
     }, [isMobileMenuOpen]);
+
+    // Debounce effect for search
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setDebouncedValue(searchValue)
+        }, 500)
+        return () => clearTimeout(timer)
+    }, [searchValue])
+
+    // Push to query param (or handle search logic)
+    useEffect(() => {
+        if (debouncedValue.trim()) {
+            // nextRouter.push(`/dashboard/search?query=${encodeURIComponent(debouncedValue)}`); // Uncomment this line if you want to push to search page
+            console.log("Searching for:", debouncedValue);
+        }
+    }, [debouncedValue, nextRouter])
+
+    const { data: searchResults, isLoading: isSearchLoading } = useQuery({
+        queryKey: ['searchResults', debouncedValue],
+        queryFn: () => fetchSearchResults(debouncedValue),
+        enabled: !!debouncedValue.trim(),
+    });
 
     useEffect(() => {
         const updateHeaderHeight = () => {
@@ -144,6 +156,10 @@ const Navbar = () => {
                         </button>
                     </div>
 
+                    {showSearch && debouncedValue.trim() && (
+                        <SearchResults isLoading={isSearchLoading} results={searchResults} />
+                    )}
+
                     {/* Language Toggle for Desktop */}
                     <div className="flex bg-bg-primary p-[3px] border border-btn-bg/50 rounded-md *:rounded-md overflow-hidden">
                         {/* 'Eng' */}
@@ -224,6 +240,8 @@ const Navbar = () => {
                     />
                     <Search className="w-4 h-4 text-gray-600 flex-shrink-0" />
                 </div>
+
+                <MobileSearchResults isLoading={isSearchLoading} results={searchResults} />
 
 
                 {/* Language Toggle for Mobile */}
