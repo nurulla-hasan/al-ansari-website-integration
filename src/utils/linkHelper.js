@@ -1,7 +1,7 @@
 
 export const getLinkHref = (item) => {
   if (!item || !item.type || !item.id) {
-    return '/'; // Return a default path if item is invalid
+    return '/';
   }
 
   switch (item.type) {

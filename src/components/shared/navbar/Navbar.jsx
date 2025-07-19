@@ -24,6 +24,26 @@ const Navbar = () => {
     const [debouncedValue, setDebouncedValue] = useState("")
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const navbarRef = useRef(null);
+    const searchRef = useRef(null); // Add this ref
+
+    // Close search when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (searchRef.current && !searchRef.current.contains(event.target)) {
+                setShowSearch(false);
+            }
+        };
+
+        if (showSearch) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [showSearch]);
 
     const navLinks = [
         { name: t("home"), href: "/" },
@@ -133,7 +153,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Right Side - Search + Language Toggle (Desktop) */}
-                <div className="hidden lg:flex items-center gap-4">
+                <div className="hidden lg:flex items-center gap-4" ref={searchRef}>
                     {/* Search Input for Desktop */}
                     <div
                         className={`flex items-center ${showSearch ? "bg-bg-primary px-2 py-[5px] border border-btn-bg/50 rounded-md" : ""

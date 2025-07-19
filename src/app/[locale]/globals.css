@@ -31,3 +31,14 @@ body {
 .min-h-minus-header { 
   min-height: calc(100vh - var(--header-height, 88px));
 }
+
+/* Custom selection color */
+::selection {
+  background-color: #AF8B18; 
+  color: #ffffff;
+}
+/* Custom selection color firefox */
+::-moz-selection {
+  background-color: #AF8B18;
+  color: #ffffff;
+}
