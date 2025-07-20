@@ -31,7 +31,7 @@ const Desclimer = () => {
             <PageLayout>
                 {/* Disclaimer Content */}
                 {isLoading && <StaticPageSkeleton />}
-                {!isLoading && isError && <ErrorDisplay message="Failed to load fraud." />}
+                {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadFraud')} />}
                 {!isLoading && !isError && disclaimer && disclaimer.length > 0 ?
                     <div dangerouslySetInnerHTML={{ __html: disclaimer }}></div> :
                     !isLoading && !isError && <p>{tDisclaimerPage('noFraudAvailable')}</p>

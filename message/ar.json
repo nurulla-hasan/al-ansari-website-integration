@@ -7,7 +7,7 @@
     "about": "عنا",
     "contact": "اتصل بنا",
     "search": "بحث...",
-    "english": "English",
+    "english": "Eng",
     "arabic": "العربية"
   },
   "Hero": {
@@ -122,9 +122,16 @@
     "newsletterNotFound": "النشرة الإخبارية غير موجودة!"
   },
   "PeoplePage": {
-    "pageTitle": "فريقنا",
-    "partnersSectionTitle": "الشركاء",
-    "teamSectionTitle": "فريقنا"
+    "ourPeople": "الناس",
+    "partners": "الشركاء",
+    "teams": "الفرق",
+    "all": "الكل",
+    "noPartnersAvailable": "لا يوجد شركاء متاحون.",
+    "partnersSectionTitle": "شركاؤنا",
+    "teamSectionTitle": "فريقنا",
+    "noTeamMembersAvailable": "لا يوجد أعضاء فريق متاحون.",
+    "failedToLoadPartners": "فشل في تحميل الشركاء.",
+    "failedToLoadTeamMembers": "فشل في تحميل أعضاء الفريق."
   },
   "SectorsPage": {
     "heroTitle": "القطاعات",
@@ -227,5 +234,48 @@
     "resultsFor": "نتائج البحث عن",
     "noResults": "لم يتم العثور على نتائج لبحثك.",
     "enterSearchTerm": "الرجاء إدخال مصطلح بحث للعثور على النتائج."
+  },
+  "Common": {
+    "somethingWentWrong": "حدث خطأ ما. الرجاء المحاولة مرة أخرى لاحقًا.",
+    "failedToLoadLatestNews": "فشل في تحميل آخر الأخبار.",
+    "noNewsAvailable": "لا توجد أخبار متاحة.",
+    "seeMore": "شاهد المزيد",
+    "invalidEmail": "عنوان بريد إلكتروني غير صالح",
+    "messageMinLength": "يجب أن تتكون الرسالة من 10 أحرف على الأقل",
+    "selectAnOption": "اختر خيارًا",
+    "failedToLoadAwards": "فشل في تحميل الجوائز.",
+    "failedToLoadCsr": "فشل في تحميل بيانات المسؤولية الاجتماعية للشركات.",
+    "failedToLoadFraud": "فشل في تحميل الاحتيال.",
+    "failedToLoadEvents": "فشل في تحميل الأحداث.",
+    "failedToLoadNewsletters": "فشل في تحميل النشرات الإخبارية.",
+    "failedToLoadUpdates": "فشل في تحميل التحديثات.",
+    "failedToLoadPrivacy": "فشل في تحميل الخصوصية.",
+    "failedToLoadSectors": "فشل في تحميل القطاعات.",
+    "failedToLoadTerms": "فشل في تحميل الشروط والأحكام.",
+    "peopleDetails": "تفاصيل الأشخاص",
+    "failedToLoadPersonDetails": "فشل في تحميل تفاصيل الشخص.",
+    "personNotFound": "الشخص غير موجود.",
+    "contact": "اتصال",
+    "email": "البريد الإلكتروني:",
+    "phoneNumber": "رقم الهاتف:",
+    "profileDetails": "تفاصيل الملف الشخصي",
+    "professionalHighlights": "أبرز النقاط المهنية",
+    "awardsRecognition": "الجوائز والتقدير",
+    "practiceAreas": "مجالات الممارسة",
+    "education": "التعليم",
+    "industryFocus": "تركيز الصناعة",
+    "barAdmission": "قبول المحاماة",
+    "eventDetails": "تفاصيل الحدث",
+    "failedToLoadEventDetails": "فشل في تحميل تفاصيل الحدث.",
+    "newsletterDetails": "تفاصيل النشرة الإخبارية",
+    "failedToLoadNewsletterDetails": "فشل في تحميل تفاصيل النشرة الإخبارية.",
+    "updateDetails": "تفاصيل التحديث",
+    "failedToLoadUpdateDetails": "فشل في تحميل تفاصيل التحديث.",
+    "sectorDetails": "تفاصيل القطاع",
+    "failedToLoadSectorDetails": "فشل في تحميل تفاصيل القطاع.",
+    "sectorNotFound": "القطاع غير موجود.",
+    "csrDetails": "تفاصيل المسؤولية الاجتماعية للشركات",
+    "failedToLoadCsrDetails": "فشل في تحميل تفاصيل المسؤولية الاجتماعية للشركات.",
+    "csrNotFound": "المسؤولية الاجتماعية للشركات غير موجودة."
   }
 }

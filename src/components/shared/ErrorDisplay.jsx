@@ -1,4 +1,8 @@
-const ErrorDisplay = ({ message = "Something went wrong. Please try again later." }) => {
+import { useTranslations } from "next-intl";
+
+const ErrorDisplay = ({ message }) => {
+  const tCommon = useTranslations('Common');
+  const displayMessage = message || tCommon('somethingWentWrong');
   return (
     <div className="flex items-center justify-center h-full p-4 text-red-600">
       <p className="text-lg font-medium">{message}</p>

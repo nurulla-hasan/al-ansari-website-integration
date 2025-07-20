@@ -31,7 +31,7 @@ const FroudAlert = () => {
             <PageLayout>
                 {/* Fraud Alert Content */}
                 {isLoading && <StaticPageSkeleton />}
-                {!isLoading && isError && <ErrorDisplay message="Failed to load fraud." />}
+                {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadFraud')} />}
                 {!isLoading && !isError && fraud && fraud.length > 0 ?
                     <div dangerouslySetInnerHTML={{ __html: fraud }}></div> :
                     !isLoading && !isError && <p>{tFraudAlertPage('noFraudAvailable')}</p>

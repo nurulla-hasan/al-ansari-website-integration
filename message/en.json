@@ -7,7 +7,7 @@
     "about": "About",
     "contact": "Contact",
     "search": "Search...",
-    "english": "English",
+    "english": "Eng",
     "arabic": "عربي"
   },
   "Hero": {
@@ -124,9 +124,16 @@
     "newsletterNotFound": "Newsletter not found!"
   },
   "PeoplePage": {
-    "pageTitle": "Our People",
-    "partnersSectionTitle": "Partners",
-    "teamSectionTitle": "Our Team"
+    "ourPeople": "Our People",
+    "partners": "Partners",
+    "teams": "Teams",
+    "all": "All",
+    "noPartnersAvailable": "No partners available.",
+    "partnersSectionTitle": "Our Partners",
+    "teamSectionTitle": "Our Team",
+    "noTeamMembersAvailable": "No team members available.",
+    "failedToLoadPartners": "Failed to load partners.",
+    "failedToLoadTeamMembers": "Failed to load team members."
   },
   "SectorsPage": {
     "heroTitle": "Sectors",
@@ -229,5 +236,48 @@
     "resultsFor": "Results for",
     "noResults": "No results found for your search.",
     "enterSearchTerm": "Please enter a search term to find results."
+  },
+  "Common": {
+    "somethingWentWrong": "Something went wrong. Please try again later.",
+    "failedToLoadLatestNews": "Failed to load latest news.",
+    "noNewsAvailable": "No news available.",
+    "seeMore": "see more",
+    "invalidEmail": "Invalid email address",
+    "messageMinLength": "Message must be at least 10 characters",
+    "selectAnOption": "Select an option",
+    "failedToLoadAwards": "Failed to load awards.",
+    "failedToLoadCsr": "Failed to load CSR data.",
+    "failedToLoadFraud": "Failed to load fraud.",
+    "failedToLoadEvents": "Failed to load events.",
+    "failedToLoadNewsletters": "Failed to load newsletters.",
+    "failedToLoadUpdates": "Failed to load updates.",
+    "failedToLoadPrivacy": "Failed to load privacy.",
+    "failedToLoadSectors": "Failed to load sectors.",
+    "failedToLoadTerms": "Failed to load terms and conditions.",
+    "peopleDetails": "People Details",
+    "failedToLoadPersonDetails": "Failed to load person details.",
+    "personNotFound": "Person not found.",
+    "contact": "Contact",
+    "email": "Email:",
+    "phoneNumber": "Phone Number:",
+    "profileDetails": "Profile Details",
+    "professionalHighlights": "Professional Highlights",
+    "awardsRecognition": "Awards & Recognition",
+    "practiceAreas": "Practice Areas",
+    "education": "Education",
+    "industryFocus": "Industry Focus",
+    "barAdmission": "Bar Admission",
+    "eventDetails": "Event Details",
+    "failedToLoadEventDetails": "Failed to load event details.",
+    "newsletterDetails": "Newsletter Details",
+    "failedToLoadNewsletterDetails": "Failed to load newsletter details.",
+    "updateDetails": "Update Details",
+    "failedToLoadUpdateDetails": "Failed to load update details.",
+    "sectorDetails": "Sector Details",
+    "failedToLoadSectorDetails": "Failed to load sector details.",
+    "sectorNotFound": "Sector not found.",
+    "csrDetails": "CSR Details",
+    "failedToLoadCsrDetails": "Failed to load CSR details.",
+    "csrNotFound": "CSR not found."
   }
 }

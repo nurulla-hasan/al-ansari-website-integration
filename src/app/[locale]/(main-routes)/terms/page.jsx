@@ -31,7 +31,7 @@ const Terms = () => {
             <PageLayout>
 
                 {isLoading && <StaticPageSkeleton count={1}/>}
-                {!isLoading && isError && <ErrorDisplay message="Failed to load terms and conditions." />}
+                {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadTerms')} />}
                 {!isLoading && !isError && terms && terms.length > 0 ?
                     <div dangerouslySetInnerHTML={{ __html: terms }}></div> :
                     !isLoading && !isError && <p>{tTermsPage('noTermsAvailable')}</p>

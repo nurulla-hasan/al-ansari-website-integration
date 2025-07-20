@@ -16,12 +16,13 @@ const UpdateDetailsPage = () => {
     const t = useTranslations('InsightsPage');
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
+    const tCommon = useTranslations('Common');
 
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },
         { name: tSimpleHero('insightsTitle'), href: "/insights" },
         { name: t('updatesSectionTitle'), href: "/insights/updates" },
-        { name: "Update Details", href: `/insights/updates/${id}` }
+        { name: tCommon('updateDetails'), href: `/insights/updates/${id}` }
     ];
 
     const { data: updateResponse, isLoading, isError } = useQuery({
@@ -40,7 +41,7 @@ const UpdateDetailsPage = () => {
             />
             <PageLayout>
                 {isLoading && <DetailsSkeletonLoader />}
-                {!isLoading && isError && <ErrorDisplay message="Failed to load update details." />}
+                {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadUpdateDetails')} />}
                 {!isLoading && !isError && update && (
                     <>
                         <div className="mb-8 space-y-2">

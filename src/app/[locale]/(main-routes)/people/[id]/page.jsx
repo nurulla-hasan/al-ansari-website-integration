@@ -8,8 +8,6 @@ import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
 import { useTranslations } from 'next-intl';
 import { useQuery } from '@tanstack/react-query';
 import { api, baseURL } from '@/utils/api';
-
-import DetailsSkeletonLoader from "@/components/shared/DetailsSkeletonLoader";
 import ErrorDisplay from "@/components/shared/ErrorDisplay";
 import PeopleDetailsSkeletonLoader from '@/components/shared/PeopleDetailsSkeletonLoader';
 
@@ -18,6 +16,7 @@ const PersonDetailsPage = () => {
 
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
+    const tCommon = useTranslations('Common');
 
     const { data: responseData, isLoading, isError } = useQuery({
         queryKey: ["person", id],
@@ -30,7 +29,7 @@ const PersonDetailsPage = () => {
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },
         { name: tSimpleHero('peopleTitle'), href: "/people" },
-        { name: "People Details", href: `/people/${id}` }
+        { name: tSimpleHero('peopleDetailsTitle'), href: `/people/${id}` }
     ];
 
     return (
@@ -41,8 +40,8 @@ const PersonDetailsPage = () => {
             />
             <PageLayout>
                 {isLoading && <PeopleDetailsSkeletonLoader />}
-                {isError && <ErrorDisplay message="Failed to load person details." />}
-                {!person && !isLoading && !isError && <ErrorDisplay message="Person not found." />}
+                {isError && <ErrorDisplay message={tCommon('failedToLoadPersonDetails')} />}
+                {!person && !isLoading && !isError && <ErrorDisplay message={tCommon('personNotFound')} />}
                 {person && (
                     <>
                         {/* Top Section */}
@@ -116,7 +115,7 @@ const PersonDetailsPage = () => {
                                     )}
                                     {person.practice && person.practice.length > 0 && (
                                         <div className="mt-6">
-                                            <h4 className="text-md font-semibold text-text-title mb-2">Practice Areas</h4>
+                                            <h4 className="text-md font-semibold text-text-title mb-2">{tCommon('practiceAreas')}</h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {person.practice.map((area, index) => (
                                                     <span key={`profile-area-${index}`} className="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-full">
@@ -173,7 +172,7 @@ const PersonDetailsPage = () => {
                                 {/* Bar Admission */}
                                 {person.barAdmission && (
                                     <div>
-                                        <h3 className="text-lg font-semibold text-text-title mb-4">Bar Admission</h3>
+                                        <h3 className="text-lg font-semibold text-text-title mb-4">{tCommon('barAdmission')}</h3>
                                         <div className="space-y-2">
                                             <p key={`bar-admission`} className="text-sm text-gray-700">
                                                 {person.barAdmission}

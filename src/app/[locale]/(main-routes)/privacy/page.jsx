@@ -31,7 +31,7 @@ const Privacy = () => {
             <PageLayout>
                 {/* Introduction Section */}
                 {isLoading && <StaticPageSkeleton />}
-                {!isLoading && isError && <ErrorDisplay message="Failed to load fraud." />}
+                {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadPrivacy')} />}
                 {!isLoading && !isError && privacy && privacy.length > 0 ?
                     <div dangerouslySetInnerHTML={{ __html: privacy }}></div> :
                     !isLoading && !isError && <p>{tPrivacyPage('noPrivacyAvailable')}</p>

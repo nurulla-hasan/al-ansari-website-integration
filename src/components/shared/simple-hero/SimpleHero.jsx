@@ -35,10 +35,10 @@ const SimpleHero = ({
                   <li key={index} className="flex items-center">
                     {index > 0 && <ChevronRight className="w-4 h-4 mx-1 text-gray-300" />}
                     {index === breadcrumbs.length - 1 ? (
-                      <span className="text-gray-300">{crumb.name}</span>
+                      <span className="text-gray-300">{crumb?.name}</span>
                     ) : (
-                      <Link href={crumb.href} className="hover:text-gray-300 transition-colors">
-                        {crumb.name}
+                      <Link href={crumb?.href} className="hover:text-gray-300 transition-colors">
+                        {crumb?.name}
                       </Link>
                     )}
                   </li>

@@ -41,7 +41,7 @@ const Events = () => {
                 
                 {isLoading && <InsightsCardSkeletonLoader count={4} />}
                 
-                {!isLoading && isError && <ErrorDisplay message="Failed to load events." />}
+                {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadEvents')} />}
                 
                 {!isLoading && !isError && eventsData && eventsData.length > 0 ? (
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8'>

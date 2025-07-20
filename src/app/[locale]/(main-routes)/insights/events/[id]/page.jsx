@@ -7,7 +7,7 @@ import SimpleHero from "@/components/shared/simple-hero/SimpleHero";
 import { api, baseURL } from "@/utils/api";
 import { formatDate } from "@/utils/dateFormatter";
 import { useQuery } from "@tanstack/react-query";
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl';
 import Image from "next/image";
 import { useParams } from 'next/navigation';
 
@@ -16,12 +16,13 @@ const EventDetailsPage = () => {
     const t = useTranslations('InsightsPage');
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
+    const tCommon = useTranslations('Common');
 
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },
         { name: tSimpleHero('insightsTitle'), href: "/insights" },
         { name: t('eventsSectionTitle'), href: "/insights/events" },
-        { name: "Event Details", href: `/insights/events/${id}` }
+        { name: tCommon('eventDetails'), href: `/insights/events/${id}` }
     ];
 
     const { data: eventResponse, isLoading, isError } = useQuery({

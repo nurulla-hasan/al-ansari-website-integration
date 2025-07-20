@@ -15,6 +15,7 @@ const SectorDetailsPage = () => {
   const { id } = useParams();
   const tNavbar = useTranslations('Navbar');
   const tSimpleHero = useTranslations('SimpleHero');
+  const tCommon = useTranslations('Common');
 
   const { data: responseData, isLoading, isError } = useQuery({
     queryKey: ["sector", id],
@@ -27,7 +28,7 @@ const SectorDetailsPage = () => {
   const breadcrumbs = [
     { name: tNavbar('home'), href: "/" },
     { name: tSimpleHero('sectorsTitle'), href: "/sectors" },
-    { name: "Sector Details", href: `/sectors/${id}` },
+    { name: tCommon('sectorDetails'), href: `/sectors/${id}` },
   ];
 
   return (
@@ -61,7 +62,7 @@ const SectorDetailsPage = () => {
             </div>
           </>
         ) : (
-          !isLoading && !isError && !sector && <ErrorDisplay message="Sector not found." />
+          !isLoading && !isError && !sector && <ErrorDisplay message={tCommon('sectorNotFound')} />
         )}
       </PageLayout>
     </div>

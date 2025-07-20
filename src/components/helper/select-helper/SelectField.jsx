@@ -24,7 +24,7 @@ const SelectField = ({
           {...register(name, { required })}
           className="w-full text-xs text-gray-500 font-normal outline-none appearance-none"
         >
-          <option value="">{defaultOption}</option>
+          <option value="">{defaultOption === "Select an option" ? tCommon('selectAnOption') : defaultOption}</option>
           {options.map((opt) => (
             <option key={opt.value} value={opt.value}>
               {opt.label}

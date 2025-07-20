@@ -16,6 +16,7 @@ const CsrDetailsPage = () => {
   const { id } = useParams();
   const tNavbar = useTranslations('Navbar');
   const tSimpleHero = useTranslations('SimpleHero');
+  const tCommon = useTranslations('Common');
 
   const { data: responseData, isLoading, isError } = useQuery({
     queryKey: ["csr", id],
@@ -29,7 +30,7 @@ const CsrDetailsPage = () => {
     { name: tNavbar('home'), href: "/" },
     { name: tSimpleHero('aboutUsTitle'), href: "/about" },
     { name: tSimpleHero('csrTitle'), href: "/about/csr" },
-    { name: "CSR Details", href: `/about/csr/${id}` },
+    { name: tCommon('csrDetails'), href: `/about/csr/${id}` },
   ];
 
   return (
@@ -38,7 +39,7 @@ const CsrDetailsPage = () => {
 
       <PageLayout>
         {isLoading && <DetailsSkeletonLoader />}
-        {!isLoading && isError && <ErrorDisplay message="Failed to load CSR details." />}
+        {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadCsrDetails')} />}
         {!isLoading && !isError && csr ? (
           <>
             <div className="mb-8 space-y-2">
@@ -64,7 +65,7 @@ const CsrDetailsPage = () => {
             </div>
           </>
         ) : (
-          !isLoading && !isError && !csr && <ErrorDisplay message="CSR not found." />
+          !isLoading && !isError && !csr && <ErrorDisplay message={tCommon('csrNotFound')} />
         )}
       </PageLayout>
     </div>

@@ -35,7 +35,7 @@ const Sectors = () => {
 
             <PageLayout>
                 {isLoading && <CardSkeletonLoader count={3} />}
-                {!isLoading && isError && <ErrorDisplay message="Failed to load sectors." />}
+                {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadSectors')} />}
                 {!isLoading && !isError && sectors && sectors.length > 0 ? (
                     <div>
                         <h3 className='text-text-muted'>

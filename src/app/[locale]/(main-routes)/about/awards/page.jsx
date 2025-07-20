@@ -37,7 +37,7 @@ const AwardsPage = () => {
             />
             <PageLayout>
                 {isLoading && <CardSkeletonLoader count={3} />}
-                {!isLoading && isError && <ErrorDisplay message="Failed to load awards." />}
+                {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadAwards')} />}
                 {!isLoading && !isError && awardsData && awardsData.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {awardsData.map((award) => (

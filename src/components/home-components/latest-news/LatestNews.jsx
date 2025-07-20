@@ -44,7 +44,7 @@ const LatestNews = () => {
 
                 <div className="relative z-10 px-0 sm:px-12 md:px-16 lg:px-20 xl:px-24">
                     {isLoading && <SliderSkeleton count={2} />}
-                    {!isLoading && isError && <ErrorDisplay message="Failed to load latest news." />}
+                    {!isLoading && isError && <ErrorDisplay message={t('failedToLoadLatestNews')} />}
                     {!isLoading && !isError && updates && updates.length > 0 ? (
                         <Swiper
                             className='!h-fit'
@@ -95,7 +95,7 @@ const LatestNews = () => {
                             ))}
                         </Swiper>
                     ) : (
-                        !isLoading && !isError && <div className='text-center'>No news available.</div>
+                        !isLoading && !isError && <div className='text-center'>{t('noNewsAvailable')}</div>
                     )}
 
 

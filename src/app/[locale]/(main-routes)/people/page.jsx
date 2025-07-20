@@ -45,8 +45,8 @@ const PeoplePage = () => {
 
             <PageLayout>
                 {(isLoadingPartners || isLoadingTeamMembers) && <PeopleSkeletonLoader count={3} />}
-                {(!isLoadingPartners && isErrorPartners) && <ErrorDisplay message="Failed to load partners." />}
-                {(!isLoadingTeamMembers && isErrorTeamMembers) && <ErrorDisplay message="Failed to load team members." />}
+                {(!isLoadingPartners && isErrorPartners) && <ErrorDisplay message={tPeople('failedToLoadPartners')} />}
+                {(!isLoadingTeamMembers && isErrorTeamMembers) && <ErrorDisplay message={tPeople('failedToLoadTeamMembers')} />}
                 {(!isLoadingPartners && !isErrorPartners && !isLoadingTeamMembers && !isErrorTeamMembers) && (
                     <div className='space-y-18'>
                         {partners && partners.length > 0 ? (

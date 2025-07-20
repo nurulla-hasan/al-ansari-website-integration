@@ -38,7 +38,7 @@ const Updates = () => {
             <PageLayout>
                 <p className='mb-4 text-text-muted'>{t('showingResults', { totalResults })}</p>
                 {isLoading && <InsightsCardSkeletonLoader count={4} />}
-                {!isLoading && isError && <ErrorDisplay message="Failed to load updates." />}
+                {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadUpdates')} />}
                 {!isLoading && !isError && updates && updates.length > 0 ? (
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8'>
                         {updates.map((item) => (

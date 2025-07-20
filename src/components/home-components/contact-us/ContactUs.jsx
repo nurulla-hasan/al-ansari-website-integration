@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 
 const ContactUs = () => {
     const t = useTranslations("Contact Us");
+    const tCommon = useTranslations("Common");
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
@@ -45,7 +46,7 @@ const ContactUs = () => {
                                 registerOptions={{
                                     pattern: {
                                         value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                                        message: "Invalid email address"
+                                        message: tCommon("invalidEmail")
                                     }
                                 }}
                                 error={errors.email}
@@ -70,7 +71,7 @@ const ContactUs = () => {
                                     name="message"
                                     rows="5"
                                     placeholder={t("messagePlaceholder")}
-                                    {...register("message", { required: true, minLength: { value: 10, message: "Message must be at least 10 characters" } })}
+                                    {...register("message", { required: true, minLength: { value: 10, message: tCommon("messageMinLength") } })}
                                     className="w-full px-4 py-3 text-xs border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-btn-bg focus:border-transparent transition-all duration-200 resize-y"
                                 >
                                 </textarea>

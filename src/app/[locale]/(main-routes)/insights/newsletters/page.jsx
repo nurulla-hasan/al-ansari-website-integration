@@ -41,7 +41,7 @@ const Newsletters = () => {
 
                 {isLoading && <InsightsCardSkeletonLoader count={4} />}
 
-                {!isLoading && isError && <ErrorDisplay message="Failed to load newsletters." />}
+                {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadNewsletters')} />}
 
                 {!isLoading && !isError && newslettersData && newslettersData.length > 0 ? (
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8'>

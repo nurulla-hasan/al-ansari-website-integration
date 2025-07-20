@@ -194,7 +194,7 @@ const Navbar = () => {
                                     : "text-black cursor-pointer"
                                     }`}
                             >
-                                Eng
+                                {t("english")}
                             </button>
                         </NextIntlLink>
                         {/* 'عربي' */}
@@ -279,7 +279,7 @@ const Navbar = () => {
                                 }`}
                             onClick={() => setIsMobileMenuOpen(false)} 
                         >
-                            Eng
+                            {t("english")}
                         </button>
                     </NextIntlLink>
                     {/* 'عربي' */}
@@ -291,7 +291,7 @@ const Navbar = () => {
                                 }`}
                             onClick={() => setIsMobileMenuOpen(false)} 
                         >
-                            عربي
+                            {t("arabic")}
                         </button>
                     </NextIntlLink>
                 </div>
