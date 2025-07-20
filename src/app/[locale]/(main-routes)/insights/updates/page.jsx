@@ -12,6 +12,7 @@ const Updates = () => {
     const t = useTranslations('UpdatesPage');
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
+    const tCommon = useTranslations('Common');
 
     const { data: updatesResponse, isLoading, isError } = useQuery({
         queryKey: ['allUpdates'],

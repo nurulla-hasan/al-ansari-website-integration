@@ -20,7 +20,9 @@
   },
   "Latest News": {
     "latestNews": "Latest News",
-    "services": "Services"
+    "services": "Services",
+    "failedToLoadLatestNews": "Failed to load latest news.",
+    "noNewsAvailable": "No news available."
   },
   "Services": {
     "title": "Services",
@@ -239,7 +241,7 @@
   },
   "Common": {
     "somethingWentWrong": "Something went wrong. Please try again later.",
-    "failedToLoadLatestNews": "Failed to load latest news.",
+    
     "noNewsAvailable": "No news available.",
     "seeMore": "see more",
     "invalidEmail": "Invalid email address",

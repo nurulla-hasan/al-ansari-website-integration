@@ -13,6 +13,7 @@ const Events = () => {
     const tEvents = useTranslations('EventsPage');
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
+    const tCommon = useTranslations('Common');
 
     const { data: eventsResponse, isLoading, isError } = useQuery({
         queryKey: ['allEvents'],

@@ -12,7 +12,6 @@ const ContactUs = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        alert("Message sent successfully!");
     };
 
     return (

@@ -20,7 +20,9 @@
   },
   "Latest News": {
     "latestNews": "اخر الاخبار",
-    "services": "الخدمات"
+    "services": "الخدمات",
+    "failedToLoadLatestNews": "فشل في تحميل آخر الأخبار.",
+    "noNewsAvailable": "لا توجد أخبار متاحة."
   },
   "Services": {
     "title": "الخدمات",
@@ -237,7 +239,6 @@
   },
   "Common": {
     "somethingWentWrong": "حدث خطأ ما. الرجاء المحاولة مرة أخرى لاحقًا.",
-    "failedToLoadLatestNews": "فشل في تحميل آخر الأخبار.",
     "noNewsAvailable": "لا توجد أخبار متاحة.",
     "seeMore": "شاهد المزيد",
     "invalidEmail": "عنوان بريد إلكتروني غير صالح",
@@ -246,9 +247,6 @@
     "failedToLoadAwards": "فشل في تحميل الجوائز.",
     "failedToLoadCsr": "فشل في تحميل بيانات المسؤولية الاجتماعية للشركات.",
     "failedToLoadFraud": "فشل في تحميل الاحتيال.",
-    "failedToLoadEvents": "فشل في تحميل الأحداث.",
-    "failedToLoadNewsletters": "فشل في تحميل النشرات الإخبارية.",
-    "failedToLoadUpdates": "فشل في تحميل التحديثات.",
     "failedToLoadPrivacy": "فشل في تحميل الخصوصية.",
     "failedToLoadSectors": "فشل في تحميل القطاعات.",
     "failedToLoadTerms": "فشل في تحميل الشروط والأحكام.",

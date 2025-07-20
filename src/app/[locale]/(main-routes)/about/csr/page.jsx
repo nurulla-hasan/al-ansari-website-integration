@@ -14,6 +14,7 @@ const CsrPage = () => {
     const tSimpleHero = useTranslations('SimpleHero');
     const tNavbar = useTranslations('Navbar');
     const tCsr = useTranslations('CsrPage');
+    const tCommon = useTranslations('Common');
 
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },

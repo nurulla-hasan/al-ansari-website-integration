@@ -13,6 +13,7 @@ const Sectors = () => {
     const tSectors = useTranslations('SectorsPage'); 
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
+    const tCommon = useTranslations('Common');
 
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },

@@ -13,6 +13,7 @@ const InsightsPage = () => {
     const tInsights = useTranslations('InsightsPage');
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
+    const tCommon = useTranslations('Common');
 
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },
@@ -52,7 +53,7 @@ const InsightsPage = () => {
                     <div>
                         <InsightsHeader title={tInsights('updatesSectionTitle')} link="/insights/updates" />
                         {isLoadingUpdates && <InsightsCardSkeletonLoader count={2} />}
-                        {!isLoadingUpdates && isErrorUpdates && <ErrorDisplay message="Failed to load updates." />}
+                        {!isLoadingUpdates && isErrorUpdates && <ErrorDisplay message={tCommon('failedToLoadUpdates')} />}
                         {!isLoadingUpdates && !isErrorUpdates && updates && updates.length > 0 ? (
                             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8'>
                                 {
@@ -68,7 +69,7 @@ const InsightsPage = () => {
                     <div>
                         <InsightsHeader title={tInsights('eventsSectionTitle')} link="/insights/events" />
                         {isLoadingEvents && <InsightsCardSkeletonLoader count={2} />}
-                        {!isLoadingEvents && isErrorEvents && <ErrorDisplay message="Failed to load events." />}
+                        {!isLoadingEvents && isErrorEvents && <ErrorDisplay message={tCommon('failedToLoadEvents')} />}
                         {!isLoadingEvents && !isErrorEvents && events && events.length > 0 ? (
                             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8'>
                                 {
@@ -84,7 +85,7 @@ const InsightsPage = () => {
                     <div>
                         <InsightsHeader title={tInsights('newslettersSectionTitle')} link="/insights/newsletters" />
                         {isLoadingNewsletters && <InsightsCardSkeletonLoader count={2} />}
-                        {!isLoadingNewsletters && isErrorNewsletters && <ErrorDisplay message="Failed to load newsletters." />}
+                        {!isLoadingNewsletters && isErrorNewsletters && <ErrorDisplay message={tCommon('failedToLoadNewsletters')} />}
                         {!isLoadingNewsletters && !isErrorNewsletters && newsletters && newsletters.length > 0 ? (
                             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8'>
                                 {

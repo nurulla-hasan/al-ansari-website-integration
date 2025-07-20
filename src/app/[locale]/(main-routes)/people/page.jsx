@@ -29,7 +29,7 @@ const PeoplePage = () => {
     const partners = partnersResponse?.data?.data;
 
     // Team members
-    const { data: teamMembersResponse, isLoading: isLoadingTeamMembers, isError: isErrorTeamMembers } = useQuery({
+    const { data: teamMembersResponse, isLoading: isLoadingTeamMembers, isError: isErrorTeamMembers } = useQuery({ 
         queryKey: ['teamMembers'],
         queryFn: () => api.get('/dashboard/person?category=team'),
     });
