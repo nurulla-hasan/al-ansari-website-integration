@@ -168,7 +168,7 @@ const ApplyJob = () => {
                                             {t("browseButton")}
                                         </button>
                                     )}
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </div>
