@@ -20,7 +20,7 @@ const SearchResultsPage = () => {
 
   const { data: searchResults, isLoading, isError, error } = useQuery({
     queryKey: ['allSearchResults', searchTerm],
-    queryFn: () => fetchSearchResults(searchTerm),
+    queryFn: () => fetchSearchResults(searchTerm), 
     enabled: !!searchTerm,
   });
 
