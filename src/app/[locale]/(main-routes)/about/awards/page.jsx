@@ -34,8 +34,10 @@ const AwardsPage = () => {
             <SimpleHero
                 title={tSimpleHero('awardsTitle')}
                 breadcrumbs={breadcrumbs}
-            />
-            <AboutPageButtons />
+            >
+
+                <AboutPageButtons />
+            </SimpleHero>
             <PageLayout>
                 {isLoading && <CardSkeletonLoader count={3} />}
                 {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadAwards')} />}

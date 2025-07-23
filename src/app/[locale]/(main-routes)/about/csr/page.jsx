@@ -34,8 +34,9 @@ const CsrPage = () => {
             <SimpleHero
                 title={tSimpleHero('csrTitle')}
                 breadcrumbs={breadcrumbs}
-            />
-            <AboutPageButtons />
+            >
+                <AboutPageButtons />
+            </SimpleHero>
             <PageLayout>
                 {isLoading && <CardSkeletonLoader count={6} />}
                 {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadCsr')} />}

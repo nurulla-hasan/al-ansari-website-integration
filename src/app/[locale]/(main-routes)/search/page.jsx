@@ -26,7 +26,6 @@ const SearchResultsPage = () => {
 
   return (
     <div className="min-h-minus-header">
-      {/* <SimpleHero title={t('title')} /> */}
       <PageLayout>
         <h2 className="text-2xl font-bold mb-4">{t('resultsFor')} "{searchTerm}"</h2>
         {isLoading && (
