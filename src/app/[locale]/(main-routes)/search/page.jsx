@@ -48,7 +48,7 @@ const SearchResultsPage = () => {
                     {result.images && (
                       <div className="relative w-full h-48">
                         <Image
-                          src={result?.images ? `${baseURL}${result?.images}` : "/assets/placeholder-insights.jpg"}
+                          src={result?.images ? `${baseURL}${result?.images}` : "/assets/placeholder-image.jpg"} 
                           alt={result.title || 'Search Result Image'}
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

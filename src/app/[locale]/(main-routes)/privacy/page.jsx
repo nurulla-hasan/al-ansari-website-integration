@@ -11,6 +11,7 @@ const Privacy = () => {
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
     const tPrivacyPage = useTranslations('PrivacyPage');
+    const tCommon = useTranslations('common');
 
     const { data, isLoading, isError } = useQuery({
         queryKey: ["privacy"],

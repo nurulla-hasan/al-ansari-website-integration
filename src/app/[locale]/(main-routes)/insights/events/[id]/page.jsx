@@ -16,7 +16,7 @@ const EventDetailsPage = () => {
     const t = useTranslations('InsightsPage');
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
-    const tCommon = useTranslations('Common');
+    const tCommon = useTranslations('common');
 
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },
@@ -51,7 +51,7 @@ const EventDetailsPage = () => {
                         <div className="flex flex-col gap-8">
                             <div className="relative w-full h-96">
                                 <Image
-                                    src={event?.image ? `${baseURL}${event?.image}` : "/assets/placeholder-insights.jpg"}
+                                    src={event?.image ? `${baseURL}${event?.image}` : "/assets/placeholder-image.jpg"}  
                                     alt={event?.title}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"

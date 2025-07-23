@@ -14,7 +14,7 @@ const AwardsPage = () => {
     const tSimpleHero = useTranslations('SimpleHero');
     const tNavbar = useTranslations('Navbar');
     const tAwards = useTranslations('AwardsPage');
-    const tCommon = useTranslations('Common');
+    const tCommon = useTranslations('common');
 
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },

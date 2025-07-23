@@ -13,7 +13,7 @@ const InsightsPage = () => {
     const tInsights = useTranslations('InsightsPage');
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
-    const tCommon = useTranslations('Common');
+    const tCommon = useTranslations('common');
 
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },

@@ -15,7 +15,7 @@ const SectorDetailsPage = () => {
   const { id } = useParams();
   const tNavbar = useTranslations('Navbar');
   const tSimpleHero = useTranslations('SimpleHero');
-  const tCommon = useTranslations('Common');
+  const tCommon = useTranslations('common');
 
   const { data: responseData, isLoading, isError } = useQuery({
     queryKey: ["sector", id],
@@ -37,13 +37,13 @@ const SectorDetailsPage = () => {
 
       <PageLayout>
         {isLoading && <DetailsSkeletonLoader />}
-        {!isLoading && isError && <ErrorDisplay message="Failed to load sector details." />}
+        {!isLoading && isError && <ErrorDisplay message={tCommon('failedToLoadSectorDetails')} />}
         {!isLoading && !isError && sector ? (
           <>
             <div className="w-full mb-8">
               <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden rounded-md">
                 <Image
-                  src={sector?.image ? `${baseURL}${sector?.image}`: "/assets/placeholder-image.jpg"}
+                  src={sector?.image ? `${baseURL}${sector?.image}`: "/assets/placeholder-image.jpg"}  
                   alt={sector?.title}
                   fill
                   sizes="100vw"

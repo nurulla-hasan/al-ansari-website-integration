@@ -11,6 +11,7 @@ const Terms = () => {
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
     const tTermsPage = useTranslations('TermsPage');
+    const tCommon = useTranslations('common');
 
     const { data, isLoading, isError } = useQuery({
         queryKey: ["terms"],

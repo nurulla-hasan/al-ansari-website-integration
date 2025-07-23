@@ -11,6 +11,7 @@ const Desclimer = () => {
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
     const tDisclaimerPage = useTranslations('DisclaimerPage');
+    const tCommon = useTranslations('common');
 
     const { data, isLoading, isError } = useQuery({
         queryKey: ["disclaimer"],

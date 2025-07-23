@@ -16,7 +16,8 @@ const UpdateDetailsPage = () => {
     const t = useTranslations('InsightsPage');
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
-    const tCommon = useTranslations('Common');
+    const tCommon = useTranslations('common');
+    
 
     const breadcrumbs = [
         { name: tNavbar('home'), href: "/" },
@@ -51,7 +52,7 @@ const UpdateDetailsPage = () => {
                         <div className="flex flex-col gap-8">
                             <div className="relative w-full h-96">
                                 <Image
-                                    src={update?.image ? `${baseURL}${update?.image}` : "/assets/placeholder-insights.jpg"}
+                                    src={update?.image ? `${baseURL}${update?.image}` : "/assets/placeholder-image.jpg"} 
                                     alt={update?.title}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"

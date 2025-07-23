@@ -16,7 +16,7 @@ const PersonDetailsPage = () => {
 
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
-    const tCommon = useTranslations('Common');
+    const tCommon = useTranslations('common');
 
     const { data: responseData, isLoading, isError } = useQuery({
         queryKey: ["person", id],
@@ -49,7 +49,7 @@ const PersonDetailsPage = () => {
                             <div className="relative flex flex-col md:flex-row gap-6 md:gap-10 items-center">
                                 <div className="relative w-48 h-60 sm:w-64 sm:h-80 md:w-80 md:h-96 flex-shrink-0 rounded-2xl overflow-hidden bg-gray-200 -mt-10 sm:-mt-16 md:-mt-20">
                                     <Image
-                                        src={person.profile_image ? `${baseURL}${person.profile_image}` : "/placeholder.svg"}
+                                        src={person.profile_image ? `${baseURL}${person.profile_image}` : "/placeholder.svg"} 
                                         alt={person.fullName}
                                         fill
                                         className="object-cover"

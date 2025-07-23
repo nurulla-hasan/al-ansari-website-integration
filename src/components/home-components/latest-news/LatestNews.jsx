@@ -26,7 +26,6 @@ const LatestNews = () => {
     });
 
     const updates = responseData?.data?.data;
-    console.log(updates);
 
     const handleScroll = () => {
         const servicesSection = document.getElementById('services');
@@ -72,7 +71,7 @@ const LatestNews = () => {
                                     <div className='bg-white rounded-2xl overflow-hidden p-4 h-full'>
                                         <div className="bg-white rounded-xl overflow-hidden flex flex-col gap-3 lg:gap-0 items-center lg:flex-row h-full">
                                             <Image
-                                                src={item?.image ? `${baseURL}${item?.image}` : '/assets/latest-news-01.jpg'}
+                                                src={item?.image ? `${baseURL}${item?.image}` : '/assets/latest-news-01.jpg'} 
                                                 alt={item?.title}
                                                 width={120}
                                                 height={120}

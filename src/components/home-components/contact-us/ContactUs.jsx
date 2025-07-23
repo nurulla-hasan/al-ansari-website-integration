@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 
 const ContactUs = () => {
     const t = useTranslations("Contact Us");
-    const tCommon = useTranslations("Common");
+    const tCommon = useTranslations("common");
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {

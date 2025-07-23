@@ -11,6 +11,7 @@ const FroudAlert = () => {
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
     const tFraudAlertPage = useTranslations('FraudAlertPage');
+    const tCommon = useTranslations('common');
 
     const { data, isLoading, isError } = useQuery({
         queryKey: ["fraud"],

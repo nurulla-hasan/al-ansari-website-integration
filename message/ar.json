@@ -237,7 +237,7 @@
     "noResults": "لم يتم العثور على نتائج لبحثك.",
     "enterSearchTerm": "الرجاء إدخال مصطلح بحث للعثور على النتائج."
   },
-  "Common": {
+  "common": {
     "somethingWentWrong": "حدث خطأ ما. الرجاء المحاولة مرة أخرى لاحقًا.",
     "noNewsAvailable": "لا توجد أخبار متاحة.",
     "seeMore": "شاهد المزيد",
@@ -246,7 +246,7 @@
     "selectAnOption": "اختر خيارًا",
     "failedToLoadAwards": "فشل في تحميل الجوائز.",
     "failedToLoadCsr": "فشل في تحميل بيانات المسؤولية الاجتماعية للشركات.",
-    "failedToLoadFraud": "فشل في تحميل الاحتيال.",
+    "failedToLoadDisclaimer": "فشل في تحميل إخلاء المسؤولية.",
     "failedToLoadPrivacy": "فشل في تحميل الخصوصية.",
     "failedToLoadSectors": "فشل في تحميل القطاعات.",
     "failedToLoadTerms": "فشل في تحميل الشروط والأحكام.",

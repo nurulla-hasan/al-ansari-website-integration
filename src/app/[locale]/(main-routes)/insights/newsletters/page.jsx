@@ -13,7 +13,7 @@ const Newsletters = () => {
     const tNewsletters = useTranslations('NewslettersPage');
     const tNavbar = useTranslations('Navbar');
     const tSimpleHero = useTranslations('SimpleHero');
-    const tCommon = useTranslations('Common');
+    const tCommon = useTranslations('common');
 
     const { data: newslettersResponse, isLoading, isError } = useQuery({
         queryKey: ['allNewsletters'],

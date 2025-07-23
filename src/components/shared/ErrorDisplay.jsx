@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 
 const ErrorDisplay = ({ message }) => {
-  const tCommon = useTranslations('Common');
+  const tCommon = useTranslations('common');
   const displayMessage = message || tCommon('somethingWentWrong');
   return (
     <div className="flex items-center justify-center h-full p-4 text-red-600">

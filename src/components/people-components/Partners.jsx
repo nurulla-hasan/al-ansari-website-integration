@@ -17,7 +17,7 @@ const Partners = ({ title, data }) => {
                         <Link href={`/people/${partner?._id}`} className="block">
                             <div className="relative w-48 h-60 rounded-2xl overflow-hidden bg-gray-200 sm:w-64 sm:h-80 md:w-[400px] md:h-[450px]">
                                 <Image
-                                    src={partner?.profile_image ? `${baseURL}${partner?.profile_image}`: "/assets/placeholder-image.jpg"}
+                                    src={partner?.profile_image ? `${baseURL}${partner?.profile_image}`: "/assets/placeholder-image.jpg"}  
                                     alt={partner?.fullName || "Profile picture"}
                                     fill
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

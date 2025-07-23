@@ -16,7 +16,7 @@ const CsrDetailsPage = () => {
   const { id } = useParams();
   const tNavbar = useTranslations('Navbar');
   const tSimpleHero = useTranslations('SimpleHero');
-  const tCommon = useTranslations('Common');
+  const tCommon = useTranslations('common');
 
   const { data: responseData, isLoading, isError } = useQuery({
     queryKey: ["csr", id],

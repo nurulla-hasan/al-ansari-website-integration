@@ -22,7 +22,7 @@ const MobileSearchResults = ({ isLoading, results, clearSearch, searchTerm }) =>
               {result.images && (
                 <div className='relative w-10 h-10'>
                   <Image
-                    src={result?.images ? `${baseURL}${result?.images}` : "/assets/placeholder-insights.jpg"}
+                    src={result?.images ? `${baseURL}${result?.images}` : "/assets/placeholder-image.jpg"} 
                     alt={result.title || 'Search Result Image'}
                     fill
                     sizes="40px" 

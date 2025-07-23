@@ -239,7 +239,7 @@
     "noResults": "No results found for your search.",
     "enterSearchTerm": "Please enter a search term to find results."
   },
-  "Common": {
+  "common": {
     "somethingWentWrong": "Something went wrong. Please try again later.",
     
     "noNewsAvailable": "No news available.",
@@ -249,7 +249,7 @@
     "selectAnOption": "Select an option",
     "failedToLoadAwards": "Failed to load awards.",
     "failedToLoadCsr": "Failed to load CSR data.",
-    "failedToLoadFraud": "Failed to load fraud.",
+    "failedToLoadDisclaimer": "Failed to load disclaimer.",
     "failedToLoadEvents": "Failed to load events.",
     "failedToLoadNewsletters": "Failed to load newsletters.",
     "failedToLoadUpdates": "Failed to load updates.",

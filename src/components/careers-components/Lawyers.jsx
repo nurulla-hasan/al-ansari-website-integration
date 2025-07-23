@@ -21,6 +21,7 @@ const Lawyers = () => {
                                 fill
                                 className="object-cover"
                                 priority
+                                sizes="(max-width: 1024px) 100vw, 50vw"
                             />
                         </div>
                     </div>

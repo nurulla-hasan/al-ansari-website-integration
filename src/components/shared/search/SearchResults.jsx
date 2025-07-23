@@ -17,7 +17,7 @@ const SearchResults = ({ isLoading, results, clearSearch, searchTerm }) => {
                   {result?.images && (
                     <div className='relative w-14 h-14'>
                       <Image 
-                        src={result?.images ? `${baseURL}${result?.images}` : "/assets/placeholder-insights.jpg"} 
+                        src={result?.images ? `${baseURL}${result?.images}` : "/assets/placeholder-image.jpg"} 
                         alt={result.title || 'Search Result Image'} 
                         fill
                         sizes="56px" 
