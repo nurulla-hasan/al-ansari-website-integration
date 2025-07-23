@@ -31,6 +31,9 @@ export default async function Locallayout({ children, params }) {
 
   return (
     <html lang={locale}>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={`
           ${poppins.variable}
           ${poltawski.variable}

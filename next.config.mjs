@@ -6,6 +6,7 @@ const parsedBaseUrl = new URL("http://13.62.48.83:5001" || 'http://localhost:300
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    productionBrowserSourceMaps: true,
     images: {
         remotePatterns: [
             {
